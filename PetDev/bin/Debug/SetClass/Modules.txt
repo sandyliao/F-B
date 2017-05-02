@@ -1,0 +1,683 @@
+using System;
+namespace ToolTest.Modules 
+{
+  public class  MDOperatorInfo
+  {
+ 
+      //**********************************************
+      //* [小草]2010/10/9
+      //* ToolTest.ModulesMDOperatorInfo类*
+      //**********************************************
+ 
+  public   MDOperatorInfo()
+    { 
+        //构造函数
+    }
+public   string  strTableName
+{
+	get 
+	{
+		return  "t_090218";
+	}
+}
+    private  int  _numContractNo;
+    ///<summary>
+    ///</summary>
+    public   int  numContractNo
+    {
+      get 
+        {
+           return  _numContractNo;
+        }
+      set 
+        {
+           _numContractNo= value;
+        }
+    }
+  
+    private  DateTime  _dtmappdate=DateTime.MinValue;
+    ///<summary>
+    ///</summary>
+    public   DateTime  dtmappdate
+    {
+      get 
+        {
+           return  _dtmappdate;
+        }
+      set 
+        {
+           _dtmappdate= value;
+        }
+    }
+  
+    private  string  _strID;
+    ///<summary>
+    ///</summary>
+    public   string  strID
+    {
+      get 
+        {
+           return  _strID;
+        }
+      set 
+        {
+           _strID= value;
+        }
+    }
+  
+    private  string  _strSupplierName;
+    ///<summary>
+    ///</summary>
+    public   string  strSupplierName
+    {
+      get 
+        {
+           return  _strSupplierName;
+        }
+      set 
+        {
+           _strSupplierName= value;
+        }
+    }
+  
+    private  float  _fltPayDate=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltPayDate
+    {
+      get 
+        {
+           return  _fltPayDate;
+        }
+      set 
+        {
+           _fltPayDate= value;
+        }
+    }
+  
+    private  string  _strCustomerID;
+    ///<summary>
+    ///</summary>
+    public   string  strCustomerID
+    {
+      get 
+        {
+           return  _strCustomerID;
+        }
+      set 
+        {
+           _strCustomerID= value;
+        }
+    }
+  
+    private  float  _fltType=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltType
+    {
+      get 
+        {
+           return  _fltType;
+        }
+      set 
+        {
+           _fltType= value;
+        }
+    }
+  
+    private  float  _fltIsAdjData=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltIsAdjData
+    {
+      get 
+        {
+           return  _fltIsAdjData;
+        }
+      set 
+        {
+           _fltIsAdjData= value;
+        }
+    }
+  
+    private  string  _strPPID;
+    ///<summary>
+    ///</summary>
+    public   string  strPPID
+    {
+      get 
+        {
+           return  _strPPID;
+        }
+      set 
+        {
+           _strPPID= value;
+        }
+    }
+  
+    private  string  _strCustomerCode;
+    ///<summary>
+    ///</summary>
+    public   string  strCustomerCode
+    {
+      get 
+        {
+           return  _strCustomerCode;
+        }
+      set 
+        {
+           _strCustomerCode= value;
+        }
+    }
+  
+    private  float  _fltCustomerID_CRM=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltCustomerID_CRM
+    {
+      get 
+        {
+           return  _fltCustomerID_CRM;
+        }
+      set 
+        {
+           _fltCustomerID_CRM= value;
+        }
+    }
+  
+    private  float  _fltSupplier_CRM=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltSupplier_CRM
+    {
+      get 
+        {
+           return  _fltSupplier_CRM;
+        }
+      set 
+        {
+           _fltSupplier_CRM= value;
+        }
+    }
+  
+    private  string  _strType_CRM;
+    ///<summary>
+    ///</summary>
+    public   string  strType_CRM
+    {
+      get 
+        {
+           return  _strType_CRM;
+        }
+      set 
+        {
+           _strType_CRM= value;
+        }
+    }
+  
+    private  string  _strProduct;
+    ///<summary>
+    ///</summary>
+    public   string  strProduct
+    {
+      get 
+        {
+           return  _strProduct;
+        }
+      set 
+        {
+           _strProduct= value;
+        }
+    }
+  
+    private  string  _strMemo;
+    ///<summary>
+    ///</summary>
+    public   string  strMemo
+    {
+      get 
+        {
+           return  _strMemo;
+        }
+      set 
+        {
+           _strMemo= value;
+        }
+    }
+  
+    private  string  _strEHSaleID;
+    ///<summary>
+    ///</summary>
+    public   string  strEHSaleID
+    {
+      get 
+        {
+           return  _strEHSaleID;
+        }
+      set 
+        {
+           _strEHSaleID= value;
+        }
+    }
+  
+    private  float  _fltEHSaleID_CRM=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltEHSaleID_CRM
+    {
+      get 
+        {
+           return  _fltEHSaleID_CRM;
+        }
+      set 
+        {
+           _fltEHSaleID_CRM= value;
+        }
+    }
+  
+    private  string  _strOrderID_CRM;
+    ///<summary>
+    ///</summary>
+    public   string  strOrderID_CRM
+    {
+      get 
+        {
+           return  _strOrderID_CRM;
+        }
+      set 
+        {
+           _strOrderID_CRM= value;
+        }
+    }
+  
+    private  float  _fltEmployees=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltEmployees
+    {
+      get 
+        {
+           return  _fltEmployees;
+        }
+      set 
+        {
+           _fltEmployees= value;
+        }
+    }
+  
+    private  float  _fltAmt=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltAmt
+    {
+      get 
+        {
+           return  _fltAmt;
+        }
+      set 
+        {
+           _fltAmt= value;
+        }
+    }
+  
+    private  float  _fltStatus=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltStatus
+    {
+      get 
+        {
+           return  _fltStatus;
+        }
+      set 
+        {
+           _fltStatus= value;
+        }
+    }
+  
+    private  string  _strVerifyStatus;
+    ///<summary>
+    ///</summary>
+    public   string  strVerifyStatus
+    {
+      get 
+        {
+           return  _strVerifyStatus;
+        }
+      set 
+        {
+           _strVerifyStatus= value;
+        }
+    }
+  
+    private  DateTime  _dtmUpdateDate=DateTime.MinValue;
+    ///<summary>
+    ///</summary>
+    public   DateTime  dtmUpdateDate
+    {
+      get 
+        {
+           return  _dtmUpdateDate;
+        }
+      set 
+        {
+           _dtmUpdateDate= value;
+        }
+    }
+  
+    private  string  _strApplier;
+    ///<summary>
+    ///</summary>
+    public   string  strApplier
+    {
+      get 
+        {
+           return  _strApplier;
+        }
+      set 
+        {
+           _strApplier= value;
+        }
+    }
+  
+    private  string  _strApplierDate;
+    ///<summary>
+    ///</summary>
+    public   string  strApplierDate
+    {
+      get 
+        {
+           return  _strApplierDate;
+        }
+      set 
+        {
+           _strApplierDate= value;
+        }
+    }
+  
+    private  string  _strApprover;
+    ///<summary>
+    ///</summary>
+    public   string  strApprover
+    {
+      get 
+        {
+           return  _strApprover;
+        }
+      set 
+        {
+           _strApprover= value;
+        }
+    }
+  
+    private  DateTime  _dtmPayApplierDate=DateTime.MinValue;
+    ///<summary>
+    ///</summary>
+    public   DateTime  dtmPayApplierDate
+    {
+      get 
+        {
+           return  _dtmPayApplierDate;
+        }
+      set 
+        {
+           _dtmPayApplierDate= value;
+        }
+    }
+  
+    private  string  _strSyncDate;
+    ///<summary>
+    ///</summary>
+    public   string  strSyncDate
+    {
+      get 
+        {
+           return  _strSyncDate;
+        }
+      set 
+        {
+           _strSyncDate= value;
+        }
+    }
+  
+    private  string  _strSyncMemo;
+    ///<summary>
+    ///</summary>
+    public   string  strSyncMemo
+    {
+      get 
+        {
+           return  _strSyncMemo;
+        }
+      set 
+        {
+           _strSyncMemo= value;
+        }
+    }
+  
+    private  string  _strPaymentID;
+    ///<summary>
+    ///</summary>
+    public   string  strPaymentID
+    {
+      get 
+        {
+           return  _strPaymentID;
+        }
+      set 
+        {
+           _strPaymentID= value;
+        }
+    }
+  
+    private  string  _strEHSaleID1_CRM;
+    ///<summary>
+    ///</summary>
+    public   string  strEHSaleID1_CRM
+    {
+      get 
+        {
+           return  _strEHSaleID1_CRM;
+        }
+      set 
+        {
+           _strEHSaleID1_CRM= value;
+        }
+    }
+  
+    private  string  _strEHSaleID1;
+    ///<summary>
+    ///</summary>
+    public   string  strEHSaleID1
+    {
+      get 
+        {
+           return  _strEHSaleID1;
+        }
+      set 
+        {
+           _strEHSaleID1= value;
+        }
+    }
+  
+    private  float  _fltIsSecondPay=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltIsSecondPay
+    {
+      get 
+        {
+           return  _fltIsSecondPay;
+        }
+      set 
+        {
+           _fltIsSecondPay= value;
+        }
+    }
+  
+    private  string  _strContractID;
+    ///<summary>
+    ///</summary>
+    public   string  strContractID
+    {
+      get 
+        {
+           return  _strContractID;
+        }
+      set 
+        {
+           _strContractID= value;
+        }
+    }
+  
+    private  float  _fltPaidAmt=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltPaidAmt
+    {
+      get 
+        {
+           return  _fltPaidAmt;
+        }
+      set 
+        {
+           _fltPaidAmt= value;
+        }
+    }
+  
+    private  float  _fltPrepareAmt=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltPrepareAmt
+    {
+      get 
+        {
+           return  _fltPrepareAmt;
+        }
+      set 
+        {
+           _fltPrepareAmt= value;
+        }
+    }
+  
+    private  float  _fltCustomerFeeAmt=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltCustomerFeeAmt
+    {
+      get 
+        {
+           return  _fltCustomerFeeAmt;
+        }
+      set 
+        {
+           _fltCustomerFeeAmt= value;
+        }
+    }
+  
+    private  float  _fltIsCreateContract=float.MinValue;
+    ///<summary>
+    ///</summary>
+    public   float  fltIsCreateContract
+    {
+      get 
+        {
+           return  _fltIsCreateContract;
+        }
+      set 
+        {
+           _fltIsCreateContract= value;
+        }
+    }
+  
+    private  DateTime  _dtmCRMPayDate=DateTime.MinValue;
+    ///<summary>
+    ///</summary>
+    public   DateTime  dtmCRMPayDate
+    {
+      get 
+        {
+           return  _dtmCRMPayDate;
+        }
+      set 
+        {
+           _dtmCRMPayDate= value;
+        }
+    }
+  
+    private  string  _strDePaySupplierID;
+    ///<summary>
+    ///</summary>
+    public   string  strDePaySupplierID
+    {
+      get 
+        {
+           return  _strDePaySupplierID;
+        }
+      set 
+        {
+           _strDePaySupplierID= value;
+        }
+    }
+  
+    private  string  _strF41;
+    ///<summary>
+    ///</summary>
+    public   string  strF41
+    {
+      get 
+        {
+           return  _strF41;
+        }
+      set 
+        {
+           _strF41= value;
+        }
+    }
+  
+    public MDOperatorInfo( int A_numContractNo, DateTime A_dtmappdate, string A_strID, string A_strSupplierName, float A_fltPayDate, string A_strCustomerID, float A_fltType, float A_fltIsAdjData, string A_strPPID, string A_strCustomerCode, float A_fltCustomerID_CRM, float A_fltSupplier_CRM, string A_strType_CRM, string A_strProduct, string A_strMemo, string A_strEHSaleID, float A_fltEHSaleID_CRM, string A_strOrderID_CRM, float A_fltEmployees, float A_fltAmt, float A_fltStatus, string A_strVerifyStatus, DateTime A_dtmUpdateDate, string A_strApplier, string A_strApplierDate, string A_strApprover, DateTime A_dtmPayApplierDate, string A_strSyncDate, string A_strSyncMemo, string A_strPaymentID, string A_strEHSaleID1_CRM, string A_strEHSaleID1, float A_fltIsSecondPay, string A_strContractID, float A_fltPaidAmt, float A_fltPrepareAmt, float A_fltCustomerFeeAmt, float A_fltIsCreateContract, DateTime A_dtmCRMPayDate, string A_strDePaySupplierID, string A_strF41 )
+    { 
+      _numContractNo = A_numContractNo;
+      _dtmappdate = A_dtmappdate;
+      _strID = A_strID;
+      _strSupplierName = A_strSupplierName;
+      _fltPayDate = A_fltPayDate;
+      _strCustomerID = A_strCustomerID;
+      _fltType = A_fltType;
+      _fltIsAdjData = A_fltIsAdjData;
+      _strPPID = A_strPPID;
+      _strCustomerCode = A_strCustomerCode;
+      _fltCustomerID_CRM = A_fltCustomerID_CRM;
+      _fltSupplier_CRM = A_fltSupplier_CRM;
+      _strType_CRM = A_strType_CRM;
+      _strProduct = A_strProduct;
+      _strMemo = A_strMemo;
+      _strEHSaleID = A_strEHSaleID;
+      _fltEHSaleID_CRM = A_fltEHSaleID_CRM;
+      _strOrderID_CRM = A_strOrderID_CRM;
+      _fltEmployees = A_fltEmployees;
+      _fltAmt = A_fltAmt;
+      _fltStatus = A_fltStatus;
+      _strVerifyStatus = A_strVerifyStatus;
+      _dtmUpdateDate = A_dtmUpdateDate;
+      _strApplier = A_strApplier;
+      _strApplierDate = A_strApplierDate;
+      _strApprover = A_strApprover;
+      _dtmPayApplierDate = A_dtmPayApplierDate;
+      _strSyncDate = A_strSyncDate;
+      _strSyncMemo = A_strSyncMemo;
+      _strPaymentID = A_strPaymentID;
+      _strEHSaleID1_CRM = A_strEHSaleID1_CRM;
+      _strEHSaleID1 = A_strEHSaleID1;
+      _fltIsSecondPay = A_fltIsSecondPay;
+      _strContractID = A_strContractID;
+      _fltPaidAmt = A_fltPaidAmt;
+      _fltPrepareAmt = A_fltPrepareAmt;
+      _fltCustomerFeeAmt = A_fltCustomerFeeAmt;
+      _fltIsCreateContract = A_fltIsCreateContract;
+      _dtmCRMPayDate = A_dtmCRMPayDate;
+      _strDePaySupplierID = A_strDePaySupplierID;
+      _strF41 = A_strF41;
+    } 
+    }  
+}

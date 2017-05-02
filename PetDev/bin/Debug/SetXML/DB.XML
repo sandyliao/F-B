@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <strPCName>192.168.1.252</strPCName>
+  <strDBName>test18</strDBName>
+  <strUserName>test</strUserName>
+  <strPassWord>123456a</strPassWord>
+  <strSQLPath>D:\FinNet\1.0\Log\</strSQLPath>
+  <strLOGPath>D:\FinNet\1.0\Log\</strLOGPath>
+  <strORACLEDBPath>
+  </strORACLEDBPath>
+  <strSQLDBPath>
+  </strSQLDBPath>
+  <strSQLBLLName>BLLGoodAttach</strSQLBLLName>
+  <strSQLBLLNameSP>CM.BLL.Good</strSQLBLLNameSP>
+  <strSQLModuleName>MDGoodAttach</strSQLModuleName>
+  <strSQLModuleSP>CM.Module.Good</strSQLModuleSP>
+</data>

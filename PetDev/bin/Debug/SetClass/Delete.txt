@@ -1,0 +1,19 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 条件参数为:
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  Deletet_090218Info(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="delete     from t_090218 where appdate=@appdate";
+SqlParameter[] objParmas = new SqlParameter[1];
+ objParmas[0] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParmas[0].Value = p_objMDOperatorInfo.dtmappdate;
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}

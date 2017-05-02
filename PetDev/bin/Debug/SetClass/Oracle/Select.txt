@@ -1,0 +1,54 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetPayRollInfo(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="select ID,PPID,EmpID,CustomerID,OrgID,CostCode,FeeType,ServiceFee,ServiceFeeDiff,InsSetID,InsSetHisID,SocialSupplier,FundSupplier,InsCost,GJJCost,InsRepFee,InsRepCost,GJJRepCost,InsLock,InsIncomeFile,InsPayFile,CoBase1,CoBase2,CoBase3,CoBase4,CoBase5,CoBase6,CoBase7,CoBase8,CoRatio1,CoRatio2,CoRatio3,CoRatio4,CoRatio5,CoRatio6,CoRatio7,CoRatio8,CoVal1,CoVal2,CoVal3,CoVal4,CoVal5,CoVal6,CoVal7,CoVal8,PoBase1,PoBase2,PoBase3,PoBase4,PoBase5,PoBase6,PoBase7,PoBase8,PoRatio1,PoRatio2,PoRatio3,PoRatio4,PoRatio5,PoRatio6,PoRatio7,PoRatio8,PoVal1,PoVal2,PoVal3,PoVal4,PoVal5,PoVal6,PoVal7,PoVal8,ArchiveSupplier,ArchiveFee,ArchiveCost,ArchiveIncomeFile,ArchivePayFile,InsOtherAmt,InsOtherAmtMemo,SrvAmt,SrvMemo,DSDFAmt,DSDFMemo,DGAmt,DGMemo,InsOtherCost,InsOtherCostMemo,SrvCost,SrvCostMemo,DSDFCost,DSDFCostMemo,DGCost,DGCostMemo,InsuSupplier,InsuFee,InsuCost,InsuMemo,InsuIncomeFile,InsuPayFile,PoInsSum,CoInsSum,GJJSum,CoRepVal1,CoRepVal2,CoRepVal3,CoRepVal4,CoRepVal5,CoRepVal6,CoRepVal7,CoRepVal8,PoRepVal1,PoRepVal2,PoRepVal3,PoRepVal4,PoRepVal5,PoRepVal6,PoRepVal7,PoRepVal8,RepStartTime,PoRepInsSum,CoRepInsSum,RepGJJSum,CoTotal,InsTotal,PoAdjTotal,ServiceCost,PayCost,PaySupplier,TaxType,PayIncomeFile,PayPayFile,BasicSalary,PosSalary,Bonus,AdjSalary,otherSalary,Allowance,TaxSalary,Tax,FinalSalary,TaxBase,TaxRatio,TaxAcc,Salary,FTTaxSalary,FTMonth,FTTax,DoubleSalary,TaxDoubleSalary,PayStart,UDFVChar1,UDFVChar2,UDFVChar3,UDFVChar4,UDFVChar5,UDFVChar6,UDFVChar7,UDFVChar8,UDFVChar9,UDFVChar10,UDFFloat1,UDFFloat2,UDFFloat3,UDFFloat4,UDFFloat5,UDFFloat6,UDFFloat7,UDFFloat8,UDFFloat9,UDFFloat10,UDFFloat11,UDFFloat12,UDFFloat13,UDFFloat14,UDFFloat15,UDFFloat16,UDFFloat17,UDFFloat18,UDFFloat19,UDFFloat20,UDFFloat21,UDFFloat22,UDFFloat23,UDFFloat24,UDFFloat25,UDFFloat26,UDFFloat27,UDFFloat28,UDFFloat29,UDFFloat30,UDFFloat31,UDFFloat32,UDFFloat33,UDFFloat34,UDFFloat35,UDFFloat36,UDFFloat37,UDFFloat38,UDFFloat39,UDFFloat40,Operator,CreateDate,UpdateDate,InsServiceStatus,PayServiceStatus,ArchiveStatus,InsRepStatus,InsOtherStatus,OtherStatus,PayOtherStatus,InsuStatus,ErrStatus,ErrDesc,ContractSupplier,ContractFee,ContractCost,ContractStatus,ContractIncomeFile,ContractPayFile,RepMemo,InsRepCalType,TGZAmt,TGZCost,TGZMemo,NewDoubleSalary,TaxNewDoubleSalary,BasicSalary1,PosSalary1,Bonus1,AdjSalary1,OtherSalary1,Allowance1,TaxSalary1,Tax1,FTTax1,FinalSalary1,Salary1,TaxDoubleSalary1,TaxNewDoubleSalary1,TaxAcc1,TaxRatio1,TrueTaxSalary,TrueTaxSalary1,SalaryTotal,SalaryTotal1,FTTaxTotal,TaxTotal,ImportDoubleSalary,ImportNewDoubleSalary,InsOtherAmt2,PoTotal  from PayRoll where CustomerID=@CustomerID";
+SqlParameter[] objParameter = new SqlParameter[1];
+
+ objParameter[0] = new SqlParameter("@CustomerID", System.Data.SqlDbType.VarChar , 16);
+ objParameter[0].Value =  p_objMDOperatorInfo.strCustomerID;
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetPayRollList(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo,int p_intStart, int p_intPageSize, ref int Out_Count,string p_strOrderBy)
+{
+	SqlParameter[] objParameter = new SqlParameter[0];
+	string strWhere = "";
+	SqlParameter SPNewParm = null;
+	ArrayList listParam = new ArrayList();
+	string strSQL ="";
+	strSQL ="select ID,PPID,EmpID,CustomerID,OrgID,CostCode,FeeType,ServiceFee,ServiceFeeDiff,InsSetID,InsSetHisID,SocialSupplier,FundSupplier,InsCost,GJJCost,InsRepFee,InsRepCost,GJJRepCost,InsLock,InsIncomeFile,InsPayFile,CoBase1,CoBase2,CoBase3,CoBase4,CoBase5,CoBase6,CoBase7,CoBase8,CoRatio1,CoRatio2,CoRatio3,CoRatio4,CoRatio5,CoRatio6,CoRatio7,CoRatio8,CoVal1,CoVal2,CoVal3,CoVal4,CoVal5,CoVal6,CoVal7,CoVal8,PoBase1,PoBase2,PoBase3,PoBase4,PoBase5,PoBase6,PoBase7,PoBase8,PoRatio1,PoRatio2,PoRatio3,PoRatio4,PoRatio5,PoRatio6,PoRatio7,PoRatio8,PoVal1,PoVal2,PoVal3,PoVal4,PoVal5,PoVal6,PoVal7,PoVal8,ArchiveSupplier,ArchiveFee,ArchiveCost,ArchiveIncomeFile,ArchivePayFile,InsOtherAmt,InsOtherAmtMemo,SrvAmt,SrvMemo,DSDFAmt,DSDFMemo,DGAmt,DGMemo,InsOtherCost,InsOtherCostMemo,SrvCost,SrvCostMemo,DSDFCost,DSDFCostMemo,DGCost,DGCostMemo,InsuSupplier,InsuFee,InsuCost,InsuMemo,InsuIncomeFile,InsuPayFile,PoInsSum,CoInsSum,GJJSum,CoRepVal1,CoRepVal2,CoRepVal3,CoRepVal4,CoRepVal5,CoRepVal6,CoRepVal7,CoRepVal8,PoRepVal1,PoRepVal2,PoRepVal3,PoRepVal4,PoRepVal5,PoRepVal6,PoRepVal7,PoRepVal8,RepStartTime,PoRepInsSum,CoRepInsSum,RepGJJSum,CoTotal,InsTotal,PoAdjTotal,ServiceCost,PayCost,PaySupplier,TaxType,PayIncomeFile,PayPayFile,BasicSalary,PosSalary,Bonus,AdjSalary,otherSalary,Allowance,TaxSalary,Tax,FinalSalary,TaxBase,TaxRatio,TaxAcc,Salary,FTTaxSalary,FTMonth,FTTax,DoubleSalary,TaxDoubleSalary,PayStart,UDFVChar1,UDFVChar2,UDFVChar3,UDFVChar4,UDFVChar5,UDFVChar6,UDFVChar7,UDFVChar8,UDFVChar9,UDFVChar10,UDFFloat1,UDFFloat2,UDFFloat3,UDFFloat4,UDFFloat5,UDFFloat6,UDFFloat7,UDFFloat8,UDFFloat9,UDFFloat10,UDFFloat11,UDFFloat12,UDFFloat13,UDFFloat14,UDFFloat15,UDFFloat16,UDFFloat17,UDFFloat18,UDFFloat19,UDFFloat20,UDFFloat21,UDFFloat22,UDFFloat23,UDFFloat24,UDFFloat25,UDFFloat26,UDFFloat27,UDFFloat28,UDFFloat29,UDFFloat30,UDFFloat31,UDFFloat32,UDFFloat33,UDFFloat34,UDFFloat35,UDFFloat36,UDFFloat37,UDFFloat38,UDFFloat39,UDFFloat40,Operator,CreateDate,UpdateDate,InsServiceStatus,PayServiceStatus,ArchiveStatus,InsRepStatus,InsOtherStatus,OtherStatus,PayOtherStatus,InsuStatus,ErrStatus,ErrDesc,ContractSupplier,ContractFee,ContractCost,ContractStatus,ContractIncomeFile,ContractPayFile,RepMemo,InsRepCalType,TGZAmt,TGZCost,TGZMemo,NewDoubleSalary,TaxNewDoubleSalary,BasicSalary1,PosSalary1,Bonus1,AdjSalary1,OtherSalary1,Allowance1,TaxSalary1,Tax1,FTTax1,FinalSalary1,Salary1,TaxDoubleSalary1,TaxNewDoubleSalary1,TaxAcc1,TaxRatio1,TrueTaxSalary,TrueTaxSalary1,SalaryTotal,SalaryTotal1,FTTaxTotal,TaxTotal,ImportDoubleSalary,ImportNewDoubleSalary,InsOtherAmt2,PoTotal  from PayRoll where ";
+
+ if ( p_objMDOperatorInfo.strCustomerID!= "" && p_objMDOperatorInfo.strCustomerID!= null)
+ {
+ SPNewParm = new SqlParameter("@CustomerID", System.Data.SqlDbType.VarChar , 16);
+ SPNewParm.Value =  p_objMDOperatorInfo.strCustomerID;
+     listParam.Add(SPNewParm);
+     strWhere += " and CustomerID =@CustomerID  ";
+ }
+
+objParameter = (SqlParameter[])listParam.ToArray(typeof(SqlParameter));
+if (p_strOrderBy.Trim() != "")
+{
+    p_strOrderBy = " order by " + p_strOrderBy;
+}
+strSQL = strSQL + strWhere + p_strOrderBy;
+	return this.ExecuteReadTable(strSQL, objParameter,p_intStart,p_intPageSize,ref Out_Count);
+}

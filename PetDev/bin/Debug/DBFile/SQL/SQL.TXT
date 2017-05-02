@@ -1,0 +1,238 @@
+--*****以下是创建表[InsRoll]SQL脚本****************************
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[InsRoll]')
+and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[InsRoll]
+GO
+CREATE TABLE [dbo].[InsRoll] (
+[ID] [bigint]   NOT NULL IDENTITY(1,1) , --主键:
+[PPID] [bigint]   NOT NULL, --客户账本:
+[CustomerID] [int]   NOT NULL, --客户ID:
+[EmpID] [int]   NOT NULL, --员工ID:
+[TypeID] [smallint]   NOT NULL, --类型:类型，引用DD_Type
+[ServiceFee] [money]   NOT NULL   constraint DF_InsRoll_ServiceFee Default 0.0, --服务费:
+[InsSetID] [uniqueidentifier]   NOT NULL, --社保福利套:引用InsSet.InsSetHisID
+[GjjSetID] [int]   NOT NULL, --公积金福利套:引用GjjSet.GjjSetID
+[CoBase1] [money]   NOT NULL   constraint DF_InsRoll_CoBase1 Default 0.0, --公司基数1:
+[CoBase2] [money]   NOT NULL   constraint DF_InsRoll_CoBase2 Default 0.0, --公司基数2:
+[CoBase3] [money]   NOT NULL   constraint DF_InsRoll_CoBase3 Default 0.0, --公司基数3:
+[CoBase4] [money]   NOT NULL   constraint DF_InsRoll_CoBase4 Default 0.0, --公司基数4:
+[CoBase5] [money]   NOT NULL   constraint DF_InsRoll_CoBase5 Default 0.0, --公司基数5:
+[CoBase6] [money]   NOT NULL   constraint DF_InsRoll_CoBase6 Default 0.0, --公司基数6:
+[CoBase7] [money]   NOT NULL   constraint DF_InsRoll_CoBase7 Default 0.0, --公司基数7:
+[CoBase8] [money]   NOT NULL   constraint DF_InsRoll_CoBase8 Default 0.0, --公司基数8:
+[CoRatio1] [money]   NOT NULL   constraint DF_InsRoll_CoRatio1 Default 0.0, --公司比例1:
+[CoRatio2] [money]   NOT NULL   constraint DF_InsRoll_CoRatio2 Default 0.0, --公司比例2:
+[CoRatio3] [money]   NOT NULL   constraint DF_InsRoll_CoRatio3 Default 0.0, --公司比例3:
+[CoRatio4] [money]   NOT NULL   constraint DF_InsRoll_CoRatio4 Default 0.0, --公司比例4:
+[CoRatio5] [money]   NOT NULL   constraint DF_InsRoll_CoRatio5 Default 0.0, --公司比例5:
+[CoRatio6] [money]   NOT NULL   constraint DF_InsRoll_CoRatio6 Default 0.0, --公司比例6:
+[CoRatio7] [money]   NOT NULL   constraint DF_InsRoll_CoRatio7 Default 0.0, --公司比例7:
+[CoRatio8] [money]   NOT NULL   constraint DF_InsRoll_CoRatio8 Default 0.0, --公司比例8:
+[CoVal1] [money]   NOT NULL   constraint DF_InsRoll_CoVal1 Default 0.0, --公司数值1:
+[CoVal2] [money]   NOT NULL   constraint DF_InsRoll_CoVal2 Default 0.0, --公司数值2:
+[CoVal3] [money]   NOT NULL   constraint DF_InsRoll_CoVal3 Default 0.0, --公司数值3:
+[CoVal4] [money]   NOT NULL   constraint DF_InsRoll_CoVal4 Default 0.0, --公司数值4:
+[CoVal5] [money]   NOT NULL   constraint DF_InsRoll_CoVal5 Default 0.0, --公司数值5:
+[CoVal6] [money]   NOT NULL   constraint DF_InsRoll_CoVal6 Default 0.0, --公司数值6:
+[CoVal7] [money]   NOT NULL   constraint DF_InsRoll_CoVal7 Default 0.0, --公司数值7:
+[CoVal8] [money]   NOT NULL   constraint DF_InsRoll_CoVal8 Default 0.0, --公司数值8:
+[CoAdj1] [money]   NOT NULL   constraint DF_InsRoll_CoAdj1 Default 0.0, --公司调整值1:
+[CoAdj2] [money]   NOT NULL   constraint DF_InsRoll_CoAdj2 Default 0.0, --公司调整值2:
+[CoAdj3] [money]   NOT NULL   constraint DF_InsRoll_CoAdj3 Default 0.0, --公司调整值3:
+[CoAdj4] [money]   NOT NULL   constraint DF_InsRoll_CoAdj4 Default 0.0, --公司调整值4:
+[CoAdj5] [money]   NOT NULL   constraint DF_InsRoll_CoAdj5 Default 0.0, --公司调整值5:
+[CoAdj6] [money]   NOT NULL   constraint DF_InsRoll_CoAdj6 Default 0.0, --公司调整值6:
+[CoAdj7] [money]   NOT NULL   constraint DF_InsRoll_CoAdj7 Default 0.0, --公司调整值7:
+[CoAdj8] [money]   NOT NULL   constraint DF_InsRoll_CoAdj8 Default 0.0, --公司调整值8:
+[PoBase1] [money]   NOT NULL   constraint DF_InsRoll_PoBase1 Default 0.0, --个人基数1:
+[PoBase2] [money]   NOT NULL   constraint DF_InsRoll_PoBase2 Default 0.0, --个人基数2:
+[PoBase3] [money]   NOT NULL   constraint DF_InsRoll_PoBase3 Default 0.0, --个人基数3:0-无权限 1-只读 2-完全 4-自定义
+[PoBase4] [money]   NOT NULL   constraint DF_InsRoll_PoBase4 Default 0.0, --个人基数4:2-删除
+[PoBase5] [money]   NOT NULL   constraint DF_InsRoll_PoBase5 Default 0.0, --个人基数5:
+[PoBase6] [money]   NOT NULL   constraint DF_InsRoll_PoBase6 Default 0.0, --个人基数6:
+[PoBase7] [money]   NOT NULL   constraint DF_InsRoll_PoBase7 Default 0.0, --个人基数7:
+[PoBase8] [money]   NOT NULL   constraint DF_InsRoll_PoBase8 Default 0.0, --个人基数8:
+[PoRatio1] [money]   NOT NULL   constraint DF_InsRoll_PoRatio1 Default 0.0, --个人比例1:
+[PoRatio2] [money]   NOT NULL   constraint DF_InsRoll_PoRatio2 Default 0.0, --个人比例2:
+[PoRatio3] [money]   NOT NULL   constraint DF_InsRoll_PoRatio3 Default 0.0, --个人比例3:
+[PoRatio4] [money]   NOT NULL   constraint DF_InsRoll_PoRatio4 Default 0.0, --个人比例4:
+[PoRatio5] [money]   NOT NULL   constraint DF_InsRoll_PoRatio5 Default 0.0, --个人比例5:
+[PoRatio6] [money]   NOT NULL   constraint DF_InsRoll_PoRatio6 Default 0.0, --个人比例6:
+[PoRatio7] [money]   NOT NULL   constraint DF_InsRoll_PoRatio7 Default 0.0, --个人比例7:
+[PoRatio8] [money]   NOT NULL   constraint DF_InsRoll_PoRatio8 Default 0.0, --个人比例8:
+[PoVal1] [money]   NOT NULL   constraint DF_InsRoll_PoVal1 Default 0.0, --个人数值1:
+[PoVal2] [money]   NOT NULL   constraint DF_InsRoll_PoVal2 Default 0.0, --个人数值2:
+[PoVal3] [money]   NOT NULL   constraint DF_InsRoll_PoVal3 Default 0.0, --个人数值3:
+[PoVal4] [money]   NOT NULL   constraint DF_InsRoll_PoVal4 Default 0.0, --个人数值4:
+[PoVal5] [money]   NOT NULL   constraint DF_InsRoll_PoVal5 Default 0.0, --个人数值5:
+[PoVal6] [money]   NOT NULL   constraint DF_InsRoll_PoVal6 Default 0.0, --个人数值6:
+[PoVal7] [money]   NOT NULL   constraint DF_InsRoll_PoVal7 Default 0.0, --个人数值7:
+[PoVal8] [money]   NOT NULL   constraint DF_InsRoll_PoVal8 Default 0.0, --个人数值8:
+[PoAdj1] [money]   NOT NULL   constraint DF_InsRoll_PoAdj1 Default 0.0, --个人调整值1:
+[PoAdj2] [money]   NOT NULL   constraint DF_InsRoll_PoAdj2 Default 0.0, --个人调整值2:
+[PoAdj3] [money]   NOT NULL   constraint DF_InsRoll_PoAdj3 Default 0.0, --个人调整值3:
+[PoAdj4] [money]   NOT NULL   constraint DF_InsRoll_PoAdj4 Default 0.0, --个人调整值4:
+[PoAdj5] [money]   NOT NULL   constraint DF_InsRoll_PoAdj5 Default 0.0, --个人调整值5:
+[PoAdj6] [money]   NOT NULL   constraint DF_InsRoll_PoAdj6 Default 0.0, --个人调整值6:
+[PoAdj7] [money]   NOT NULL   constraint DF_InsRoll_PoAdj7 Default 0.0, --个人调整值7:
+[PoAdj8] [money]   NOT NULL   constraint DF_InsRoll_PoAdj8 Default 0.0, --个人调整值8:
+[SocialSupplierID] [int]   NOT NULL   constraint DF_InsRoll_SocialSupplierID Default 0, --社保供应商ID:
+[FundSupplierID] [int]   NOT NULL   constraint DF_InsRoll_FundSupplierID Default 0, --公积金供应商ID:
+[PayDate] [char] (4) , --供应商付款帐期:
+[FactDate] [char] (4) , --员工实际帐期:
+[InsCost] [money]   NOT NULL   constraint DF_InsRoll_InsCost Default 0.0, --社保成本:
+[GjjCost] [money]   NOT NULL   constraint DF_InsRoll_GjjCost Default 0.0, --公积金成本:
+[DeID] [bigint]   NOT NULL   constraint DF_InsRoll_DeID Default 0, --红冲ID:
+[TaskID] [bigint]   NOT NULL   constraint DF_InsRoll_TaskID Default 0, --任务ID:
+[ContractNo1] [numeric] , --合同号1:
+[ContractNo2] [numeric] , --合同号2:
+[ContractNo3] [numeric] , --合同号3:
+[ContractNo4] [numeric]  --合同号4:
+) ON [PRIMARY]
+ GO 
+
+ exec sp_addextendedproperty N'MS_Description', N'主键:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ID'
+ exec sp_addextendedproperty N'MS_Description', N'客户账本:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PPID'
+ exec sp_addextendedproperty N'MS_Description', N'客户ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CustomerID'
+ exec sp_addextendedproperty N'MS_Description', N'员工ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'EmpID'
+ exec sp_addextendedproperty N'MS_Description', N'类型:类型，引用DD_Type', N'user', N'dbo', N'table',N'InsRoll', N'column', N'TypeID'
+ exec sp_addextendedproperty N'MS_Description', N'服务费:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ServiceFee'
+ exec sp_addextendedproperty N'MS_Description', N'社保福利套:引用InsSet.InsSetHisID', N'user', N'dbo', N'table',N'InsRoll', N'column', N'InsSetID'
+ exec sp_addextendedproperty N'MS_Description', N'公积金福利套:引用GjjSet.GjjSetID', N'user', N'dbo', N'table',N'InsRoll', N'column', N'GjjSetID'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase1'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase2'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase3'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase4'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase5'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase6'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase7'
+ exec sp_addextendedproperty N'MS_Description', N'公司基数8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoBase8'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio1'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio2'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio3'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio4'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio5'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio6'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio7'
+ exec sp_addextendedproperty N'MS_Description', N'公司比例8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoRatio8'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal1'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal2'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal3'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal4'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal5'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal6'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal7'
+ exec sp_addextendedproperty N'MS_Description', N'公司数值8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoVal8'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj1'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj2'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj3'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj4'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj5'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj6'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj7'
+ exec sp_addextendedproperty N'MS_Description', N'公司调整值8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'CoAdj8'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase1'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase2'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数3:0-无权限 1-只读 2-完全 4-自定义', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase3'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数4:2-删除', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase4'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase5'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase6'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase7'
+ exec sp_addextendedproperty N'MS_Description', N'个人基数8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoBase8'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio1'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio2'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio3'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio4'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio5'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio6'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio7'
+ exec sp_addextendedproperty N'MS_Description', N'个人比例8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoRatio8'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal1'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal2'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal3'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal4'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal5'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal6'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal7'
+ exec sp_addextendedproperty N'MS_Description', N'个人数值8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoVal8'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj1'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj2'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj3'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj4'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值5:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj5'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值6:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj6'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值7:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj7'
+ exec sp_addextendedproperty N'MS_Description', N'个人调整值8:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PoAdj8'
+ exec sp_addextendedproperty N'MS_Description', N'社保供应商ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'SocialSupplierID'
+ exec sp_addextendedproperty N'MS_Description', N'公积金供应商ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'FundSupplierID'
+ exec sp_addextendedproperty N'MS_Description', N'供应商付款帐期:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'PayDate'
+ exec sp_addextendedproperty N'MS_Description', N'员工实际帐期:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'FactDate'
+ exec sp_addextendedproperty N'MS_Description', N'社保成本:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'InsCost'
+ exec sp_addextendedproperty N'MS_Description', N'公积金成本:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'GjjCost'
+ exec sp_addextendedproperty N'MS_Description', N'红冲ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'DeID'
+ exec sp_addextendedproperty N'MS_Description', N'任务ID:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'TaskID'
+ exec sp_addextendedproperty N'MS_Description', N'合同号1:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ContractNo1'
+ exec sp_addextendedproperty N'MS_Description', N'合同号2:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ContractNo2'
+ exec sp_addextendedproperty N'MS_Description', N'合同号3:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ContractNo3'
+ exec sp_addextendedproperty N'MS_Description', N'合同号4:', N'user', N'dbo', N'table',N'InsRoll', N'column', N'ContractNo4'
+  GO 
+
+
+--*****以下是创建表[DD_Type]SQL脚本****************************
+if exists (select * from dbo.sysobjects where id = object_id(N'[dbo].[DD_Type]')
+and OBJECTPROPERTY(id, N'IsUserTable') = 1)
+drop table [dbo].[DD_Type]
+GO
+CREATE TABLE [dbo].[DD_Type] (
+[ID] [int]   NOT NULL IDENTITY(1,1) , --主键:
+[Kind] [varchar] (20)   NOT NULL, --大类:
+[SubKind] [varchar] (50)   NOT NULL --小类:
+) ON [PRIMARY]
+ GO 
+
+ exec sp_addextendedproperty N'MS_Description', N'主键:', N'user', N'dbo', N'table',N'DD_Type', N'column', N'ID'
+ exec sp_addextendedproperty N'MS_Description', N'大类:', N'user', N'dbo', N'table',N'DD_Type', N'column', N'Kind'
+ exec sp_addextendedproperty N'MS_Description', N'小类:', N'user', N'dbo', N'table',N'DD_Type', N'column', N'SubKind'
+  GO 
+
+
+--*****以下是插入表[DD_Type]SQL脚本****************************
+ delete from  DD_Type 
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('汇缴','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('补缴','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('社保差异','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('非固定服务费','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('商保','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('合同','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('档案','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('体检收入','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('其他非固定','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('其他社保非固定','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('尾数','''')
+
+ GO 
+ insert into  DD_Type( Kind,SubKind) values('销售费用','''')
+
+ GO 

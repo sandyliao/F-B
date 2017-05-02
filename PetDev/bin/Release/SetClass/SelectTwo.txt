@@ -1,0 +1,20 @@
+/// <summary>
+/// 根据条件查询数据数据
+/// </summary>
+/// <param name="p_hasParameter">
+/// 更新条件为:
+/// 1: AID
+/// </param>
+/// <returns>返回查询数据</returns>
+    public  DataTable   GetInfo (Hashtable p_hasParameter) 
+    {
+	string strSQL ="";
+	strSQL ="select  a.AID ,a.QID ,a.HRUID ,a.USERID ,a.ANSWER ,a.PDATE ,a.ITFLOWID ,a.ITID ,a.CTMID ,b.QID ,b.CTMID ,b.SHEETID ,b.QUSID ,b.QUSTYPE ,b.QUSSTRING ,b.ANSSTRING ,b.QUSORDER ,b.QUSSTATUS from S_REMARK_A where   a.QID=b.QID and a.AID=:AID";
+OracleParameter[] objParameter = new OracleParameter[1];
+ 
+ objParameter[0] = new OracleParameter(":AID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[0].Value = p_hasParameter["AID"];
+ 
+	return this.ExecuteReadTable(strSQL, objParameter);
+   } 
+    

@@ -1,0 +1,20 @@
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2008-10-15
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objWhere">
+/// 条件参数为:
+/// 1: HRUID
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  DeleteUSERInfo(Hashtable p_objWhere)
+{
+	string strSQL ="";
+	strSQL ="delete     from S_USER where HRUID=:HRUID";
+OracleParameter[] objParmas = new OracleParameter[1];
+ objParmas[0] = new OracleParameter(":HRUID", System.Data.OracleClient.OracleType.Number , 10);
+ objParmas[0].Value = p_objWhere["HRUID"];
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}

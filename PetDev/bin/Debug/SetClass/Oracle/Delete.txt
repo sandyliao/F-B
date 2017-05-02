@@ -1,0 +1,20 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 条件参数为:
+/// 1: OprID--用户ID:
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  DeleteOperatorInfo(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="delete     from Operator where OprID=@OprID";
+SqlParameter[] objParmas = new SqlParameter[1];
+ objParmas[0] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParmas[0].Value = p_objMDOperatorInfo.intOprID;
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}

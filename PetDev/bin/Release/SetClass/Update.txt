@@ -1,0 +1,115 @@
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2008-10-15
+/// 功能描述: 根据条件更新表数据
+/// </summary>
+/// <param name="p_hasParameter">
+/// 更新条件为:
+/// 1: HRUID
+/// 更新字段为:
+/// 1: HRUID
+/// 2: CTMID
+/// 3: COID
+/// 4: DIVID
+/// 5: LOGIN
+/// 6: NAME
+/// 7: PASSWORD
+/// 8: AUTHORITY
+/// 9: SEX
+/// 10: POSITION
+/// 11: EMAIL
+/// 12: TEL
+/// 13: FAX
+/// 14: CRTDATE
+/// 15: ACCDATE
+/// 16: STATUS
+/// 17: ACCESSKEY
+/// 18: NOWLOCK
+/// 19: LOCKREMAIN
+/// 20: ISSTANDARD
+/// 21: ISCTMLEVEL
+/// 22: ISRESETPWD
+/// 23: ISREFRESHJOB
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   UpdateUSER (Hashtable p_hasParameter) 
+    {
+	string strSQL ="";
+	strSQL ="update  S_USER set  HRUID=:HRUID,CTMID=:CTMID,COID=:COID,DIVID=:DIVID,LOGIN=:LOGIN,NAME=:NAME,PASSWORD=:PASSWORD,AUTHORITY=:AUTHORITY,SEX=:SEX,POSITION=:POSITION,EMAIL=:EMAIL,TEL=:TEL,FAX=:FAX,CRTDATE=:CRTDATE,ACCDATE=:ACCDATE,STATUS=:STATUS,ACCESSKEY=:ACCESSKEY,NOWLOCK=:NOWLOCK,LOCKREMAIN=:LOCKREMAIN,ISSTANDARD=:ISSTANDARD,ISCTMLEVEL=:ISCTMLEVEL,ISRESETPWD=:ISRESETPWD,ISREFRESHJOB=:ISREFRESHJOB    where HRUID=:HRUID";
+OracleParameter[] objParameter = new OracleParameter[24];
+ 
+    
+ objParameter[0] = new OracleParameter(":HRUID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[0].Value = p_hasParameter["HRUID"];
+ 
+ objParameter[1] = new OracleParameter(":CTMID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[1].Value = p_hasParameter["CTMID"];
+ 
+ objParameter[2] = new OracleParameter(":COID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[2].Value = p_hasParameter["COID"];
+ 
+ objParameter[3] = new OracleParameter(":DIVID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[3].Value = p_hasParameter["DIVID"];
+ 
+ objParameter[4] = new OracleParameter(":LOGIN", System.Data.OracleClient.OracleType.VarChar , 20);
+ objParameter[4].Value = p_hasParameter["LOGIN"];
+ 
+ objParameter[5] = new OracleParameter(":NAME", System.Data.OracleClient.OracleType.VarChar , 20);
+ objParameter[5].Value = p_hasParameter["NAME"];
+ 
+ objParameter[6] = new OracleParameter(":PASSWORD", System.Data.OracleClient.OracleType.VarChar , 32);
+ objParameter[6].Value = p_hasParameter["PASSWORD"];
+ 
+ objParameter[7] = new OracleParameter(":AUTHORITY", System.Data.OracleClient.OracleType.Char , 16);
+ objParameter[7].Value = p_hasParameter["AUTHORITY"];
+ 
+ objParameter[8] = new OracleParameter(":SEX", System.Data.OracleClient.OracleType.VarChar , 1);
+ objParameter[8].Value = p_hasParameter["SEX"];
+ 
+ objParameter[9] = new OracleParameter(":POSITION", System.Data.OracleClient.OracleType.VarChar , 2);
+ objParameter[9].Value = p_hasParameter["POSITION"];
+ 
+ objParameter[10] = new OracleParameter(":EMAIL", System.Data.OracleClient.OracleType.VarChar , 80);
+ objParameter[10].Value = p_hasParameter["EMAIL"];
+ 
+ objParameter[11] = new OracleParameter(":TEL", System.Data.OracleClient.OracleType.VarChar , 27);
+ objParameter[11].Value = p_hasParameter["TEL"];
+ 
+ objParameter[12] = new OracleParameter(":FAX", System.Data.OracleClient.OracleType.VarChar , 27);
+ objParameter[12].Value = p_hasParameter["FAX"];
+ 
+ objParameter[13] = new OracleParameter(":CRTDATE", System.Data.OracleClient.OracleType.DateTime , 8);
+ objParameter[13].Value = p_hasParameter["CRTDATE"];
+ 
+ objParameter[14] = new OracleParameter(":ACCDATE", System.Data.OracleClient.OracleType.DateTime , 8);
+ objParameter[14].Value = p_hasParameter["ACCDATE"];
+ 
+ objParameter[15] = new OracleParameter(":STATUS", System.Data.OracleClient.OracleType.VarChar , 2);
+ objParameter[15].Value = p_hasParameter["STATUS"];
+ 
+ objParameter[16] = new OracleParameter(":ACCESSKEY", System.Data.OracleClient.OracleType.VarChar , 40);
+ objParameter[16].Value = p_hasParameter["ACCESSKEY"];
+ 
+ objParameter[17] = new OracleParameter(":NOWLOCK", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[17].Value = p_hasParameter["NOWLOCK"];
+ 
+ objParameter[18] = new OracleParameter(":LOCKREMAIN", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[18].Value = p_hasParameter["LOCKREMAIN"];
+ 
+ objParameter[19] = new OracleParameter(":ISSTANDARD", System.Data.OracleClient.OracleType.Char , 1);
+ objParameter[19].Value = p_hasParameter["ISSTANDARD"];
+ 
+ objParameter[20] = new OracleParameter(":ISCTMLEVEL", System.Data.OracleClient.OracleType.Char , 1);
+ objParameter[20].Value = p_hasParameter["ISCTMLEVEL"];
+ 
+ objParameter[21] = new OracleParameter(":ISRESETPWD", System.Data.OracleClient.OracleType.Char , 1);
+ objParameter[21].Value = p_hasParameter["ISRESETPWD"];
+ 
+ objParameter[22] = new OracleParameter(":ISREFRESHJOB", System.Data.OracleClient.OracleType.Char , 1);
+ objParameter[22].Value = p_hasParameter["ISREFRESHJOB"];
+ 
+ objParameter[23] = new OracleParameter(":HRUID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[23].Value = p_hasParameter["HRUID"];
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }

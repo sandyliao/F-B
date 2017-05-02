@@ -1,0 +1,74 @@
+/*****以下是创建表[BBS]SQL脚本****************************/
+
+/*删除现有表*/
+/*drop table fnd.T_BBS;*/
+/*创建表结构*/
+CREATE TABLE fnd.T_BBS
+(
+ BID number(10)   NOT NULL,  /*主键:BBS帖子主键 */
+ CID number(10) ,  /*分类ID:帖子所在分类 */
+ VID number(10) ,  /*投票ID: */
+ Title varchar2(255) ,  /*主题: */
+ Content clob  ,   /*内容: */
+ ClickCount number(10)  Default 0,  /*点击量: */
+ ReplyCount number(10)  Default 0,  /*回复量: */
+ Author varchar2(20) ,  /*发帖人: */
+ CreateDate date   ,  /*发帖日期: */
+ LastReply varchar2(20) ,  /*最后回复人: */
+ LastUpdate date   ,  /*最后回帖时间: */
+ IsGood number(1)  Default 0,  /*是否精华帖:0-否1-是 */
+ IsHot number(1)  Default 0,  /*是否热门帖:0-否1-是 */
+ IsTop number(1)  Default 0,  /*是否置顶帖:0-否1-是 */
+ IP varchar2(20) ,  /*发贴用户IP: */
+ Status char(2)  Default '01',  /*是否关闭:00-关闭01-有效 */
+ AuthorID number(10) ,  /*发帖人ID: */
+ LastReplyID number(10) ,  /*最后回复人ID: */
+ ImgURL varchar2(200) ,  /*图片地址: */
+ UpdateDate date   ,  /*修改时间: */
+ IsUpdate number(1)  Default 0,  /*是否编辑过:0-未编辑1－已修改 */
+ goodScore number(10)  Default 0,  /*好评: */
+ badScore number(10)  Default 0,  /*差评: */
+ IsAllTop number(1)  Default 0,  /*是否总置顶:1表示是，0表示否 */
+ LastIP varchar2(200) ,  /*最后回复人的IP地址: */
+ ListColor varchar2(7)  /*列表显示的颜色: */
+)
+TABLESPACE BBS; 
+/*创建表字段说明*/
+COMMENT ON COLUMN  fnd.T_BBS.BID IS '主键:BBS帖子主键';
+COMMENT ON COLUMN  fnd.T_BBS.CID IS '分类ID:帖子所在分类';
+COMMENT ON COLUMN  fnd.T_BBS.VID IS '投票ID:';
+COMMENT ON COLUMN  fnd.T_BBS.Title IS '主题:';
+COMMENT ON COLUMN  fnd.T_BBS.Content IS '内容:';
+COMMENT ON COLUMN  fnd.T_BBS.ClickCount IS '点击量:';
+COMMENT ON COLUMN  fnd.T_BBS.ReplyCount IS '回复量:';
+COMMENT ON COLUMN  fnd.T_BBS.Author IS '发帖人:';
+COMMENT ON COLUMN  fnd.T_BBS.CreateDate IS '发帖日期:';
+COMMENT ON COLUMN  fnd.T_BBS.LastReply IS '最后回复人:';
+COMMENT ON COLUMN  fnd.T_BBS.LastUpdate IS '最后回帖时间:';
+COMMENT ON COLUMN  fnd.T_BBS.IsGood IS '是否精华帖:0-否1-是';
+COMMENT ON COLUMN  fnd.T_BBS.IsHot IS '是否热门帖:0-否1-是';
+COMMENT ON COLUMN  fnd.T_BBS.IsTop IS '是否置顶帖:0-否1-是';
+COMMENT ON COLUMN  fnd.T_BBS.IP IS '发贴用户IP:';
+COMMENT ON COLUMN  fnd.T_BBS.Status IS '是否关闭:00-关闭01-有效';
+COMMENT ON COLUMN  fnd.T_BBS.AuthorID IS '发帖人ID:';
+COMMENT ON COLUMN  fnd.T_BBS.LastReplyID IS '最后回复人ID:';
+COMMENT ON COLUMN  fnd.T_BBS.ImgURL IS '图片地址:';
+COMMENT ON COLUMN  fnd.T_BBS.UpdateDate IS '修改时间:';
+COMMENT ON COLUMN  fnd.T_BBS.IsUpdate IS '是否编辑过:0-未编辑1－已修改';
+COMMENT ON COLUMN  fnd.T_BBS.goodScore IS '好评:';
+COMMENT ON COLUMN  fnd.T_BBS.badScore IS '差评:';
+COMMENT ON COLUMN  fnd.T_BBS.IsAllTop IS '是否总置顶:1表示是，0表示否';
+COMMENT ON COLUMN  fnd.T_BBS.LastIP IS '最后回复人的IP地址:';
+COMMENT ON COLUMN  fnd.T_BBS.ListColor IS '列表显示的颜色:';
+/*创建表字段索引*/
+CREATE INDEX  fnd.I_BBS_PK_ID ON  fnd.T_BBS(BID) TABLESPACE IDX_FINNET;
+ALTER TABLE fnd.T_BBS ADD PRIMARY KEY(BID);
+
+/*创建表上需要使用到的SEQUENCE*/
+CREATE SEQUENCE fnd.Q_BBSID START WITH 1 INCREMENT BY 1 NOCYCLE NOMAXVALUE; 
+CREATE PUBLIC SYNONYM SEQ_BBSID FOR fnd.Q_BBSID; 
+/*给SEQUENCE查询权限*/
+GRANT SELECT ON fnd.Q_BBSID to finnet;/*给表创建笔名*/
+CREATE PUBLIC SYNONYM S_BBS for fnd.T_BBS; 
+/*给表创建用户的使用权限*/
+GRANT SELECT,INSERT,UPDATE,DELETE ON fnd.T_BBS  to finnet; 

@@ -1,0 +1,75 @@
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2011-04-12
+/// 功能描述: 根据条件更新表数据
+/// </summary>
+/// <param name="p_objMDOpr">
+/// 更新条件为:
+/// 1: OrgID--角色ID:
+/// 2: OrgCode--组织编码:
+/// 3: CreateDate--生成日期:
+/// 更新字段为:
+/// 1: OrgID--角色ID:
+/// 2: OrgCode--组织编码:
+/// 3: CtmID--客户ID:
+/// 4: Cname--中文名:
+/// 5: Ename--英文名:
+/// 6: ListIndex--显示顺序:
+/// 7: TaxTye--缴税地区:数据字典
+/// 8: OprID--操作员ID:
+/// 9: Status--状态:01-有效 06-删除
+/// 10: CreateDate--生成日期:
+/// 11: UpdateDate--更新日期:
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   UpdateOrg (eHR.Modules.MDOpr p_objMDOpr)
+    {
+	string strSQL ="";
+	strSQL ="update  Org set  OrgID=@OrgID,OrgCode=@OrgCode,CtmID=@CtmID,Cname=@Cname,Ename=@Ename,ListIndex=@ListIndex,TaxTye=@TaxTye,OprID=@OprID,Status=@Status,CreateDate=@CreateDate,UpdateDate=@UpdateDate    where OrgID=@OrgID and OrgCode=@OrgCode and CreateDate=@CreateDate";
+SqlParameter[] objParameter = new SqlParameter[14];
+ 
+    
+ objParameter[0] = new SqlParameter("@OrgID", System.Data.SqlDbType.Int , 4);
+ objParameter[0].Value =  p_objMDOpr.intOrgID;
+ 
+ objParameter[1] = new SqlParameter("@OrgCode", System.Data.SqlDbType.VarChar , 255);
+ objParameter[1].Value =  p_objMDOpr.strOrgCode;
+ 
+ objParameter[2] = new SqlParameter("@CtmID", System.Data.SqlDbType.Int , 4);
+ objParameter[2].Value =  p_objMDOpr.intCtmID;
+ 
+ objParameter[3] = new SqlParameter("@Cname", System.Data.SqlDbType.VarChar , 100);
+ objParameter[3].Value =  p_objMDOpr.strCname;
+ 
+ objParameter[4] = new SqlParameter("@Ename", System.Data.SqlDbType.VarChar , 100);
+ objParameter[4].Value =  p_objMDOpr.strEname;
+ 
+ objParameter[5] = new SqlParameter("@ListIndex", System.Data.SqlDbType.Int , 4);
+ objParameter[5].Value =  p_objMDOpr.intListIndex;
+ 
+ objParameter[6] = new SqlParameter("@TaxTye", System.Data.SqlDbType.VarChar , 4);
+ objParameter[6].Value =  p_objMDOpr.strTaxTye;
+ 
+ objParameter[7] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParameter[7].Value =  p_objMDOpr.intOprID;
+ 
+ objParameter[8] = new SqlParameter("@Status", System.Data.SqlDbType.Char , 2);
+ objParameter[8].Value =  p_objMDOpr.strStatus;
+ 
+ objParameter[9] = new SqlParameter("@CreateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[9].Value =  p_objMDOpr.dtmCreateDate;
+ 
+ objParameter[10] = new SqlParameter("@UpdateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[10].Value =  p_objMDOpr.dtmUpdateDate;
+ 
+ objParameter[11] = new SqlParameter("@OrgID", System.Data.SqlDbType.Int , 4);
+ objParameter[11].Value =  p_objMDOpr.intOrgID;
+ 
+ objParameter[12] = new SqlParameter("@OrgCode", System.Data.SqlDbType.VarChar , 255);
+ objParameter[12].Value =  p_objMDOpr.strOrgCode;
+ 
+ objParameter[13] = new SqlParameter("@CreateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[13].Value =  p_objMDOpr.dtmCreateDate;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }

@@ -1,0 +1,263 @@
+using System;
+namespace CM.Module.Good 
+{
+  public class  MDGoodAttach
+  {
+ 
+      //**********************************************
+      //* [小草]2014/9/2
+      //* CM.Module.GoodMDGoodAttach类*
+      //**********************************************
+ 
+  public   MDGoodAttach()
+    { 
+        //构造函数
+    }
+public   string  strTableName
+{
+	get 
+	{
+		return  "GoodAttach";
+	}
+}
+    private  string  _strAttID;
+    ///<summary>
+    ///商品附件ID:
+    ///</summary>
+    public   string  strAttID
+    {
+      get 
+        {
+           return  _strAttID;
+        }
+      set 
+        {
+           _strAttID= value;
+        }
+    }
+  
+    private  int  _intGoodID=int.MinValue;
+    ///<summary>
+    ///商品ID:
+    ///</summary>
+    public   int  intGoodID
+    {
+      get 
+        {
+           return  _intGoodID;
+        }
+      set 
+        {
+           _intGoodID= value;
+        }
+    }
+  
+    private  int  _intBussID=int.MinValue;
+    ///<summary>
+    ///商家ID:
+    ///</summary>
+    public   int  intBussID
+    {
+      get 
+        {
+           return  _intBussID;
+        }
+      set 
+        {
+           _intBussID= value;
+        }
+    }
+  
+    private  string  _strAttType;
+    ///<summary>
+    ///员工附件类型:
+    ///</summary>
+    public   string  strAttType
+    {
+      get 
+        {
+           return  _strAttType;
+        }
+      set 
+        {
+           _strAttType= value;
+        }
+    }
+  
+    private  string  _strCName;
+    ///<summary>
+    ///附件名称:
+    ///</summary>
+    public   string  strCName
+    {
+      get 
+        {
+           return  _strCName;
+        }
+      set 
+        {
+           _strCName= value;
+        }
+    }
+  
+    private  DateTime  _dtmCreateDate=DateTime.MinValue;
+    ///<summary>
+    ///创建日期:
+    ///</summary>
+    public   DateTime  dtmCreateDate
+    {
+      get 
+        {
+           return  _dtmCreateDate;
+        }
+      set 
+        {
+           _dtmCreateDate= value;
+        }
+    }
+  
+    private  string  _strMemo;
+    ///<summary>
+    ///备注:
+    ///</summary>
+    public   string  strMemo
+    {
+      get 
+        {
+           return  _strMemo;
+        }
+      set 
+        {
+           _strMemo= value;
+        }
+    }
+  
+    private  string  _strOperator;
+    ///<summary>
+    ///附件上传人名称:
+    ///</summary>
+    public   string  strOperator
+    {
+      get 
+        {
+           return  _strOperator;
+        }
+      set 
+        {
+           _strOperator= value;
+        }
+    }
+  
+    private  string  _strStatus;
+    ///<summary>
+    ///状态:00-未阅 01-已阅 02-已审查 06-驳回
+    ///</summary>
+    public   string  strStatus
+    {
+      get 
+        {
+           return  _strStatus;
+        }
+      set 
+        {
+           _strStatus= value;
+        }
+    }
+  
+    private  string  _strAuditOpr;
+    ///<summary>
+    ///附件审核员ID:
+    ///</summary>
+    public   string  strAuditOpr
+    {
+      get 
+        {
+           return  _strAuditOpr;
+        }
+      set 
+        {
+           _strAuditOpr= value;
+        }
+    }
+  
+    private  DateTime  _dtmUpdateDate=DateTime.MinValue;
+    ///<summary>
+    ///更新日期:
+    ///</summary>
+    public   DateTime  dtmUpdateDate
+    {
+      get 
+        {
+           return  _dtmUpdateDate;
+        }
+      set 
+        {
+           _dtmUpdateDate= value;
+        }
+    }
+  
+    private  string  _strtasktype;
+    ///<summary>
+    ///任务类型:emptaskAttach表中数据有数据,,由原来emptaskAttach表的任务类型初始而来
+    ///</summary>
+    public   string  strtasktype
+    {
+      get 
+        {
+           return  _strtasktype;
+        }
+      set 
+        {
+           _strtasktype= value;
+        }
+    }
+  
+    public MDGoodAttach( string A_strAttID, int A_intGoodID, int A_intBussID, string A_strAttType, string A_strCName, DateTime A_dtmCreateDate, string A_strMemo, string A_strOperator, string A_strStatus, string A_strAuditOpr, DateTime A_dtmUpdateDate, string A_strtasktype )
+    { 
+      _strAttID = A_strAttID;
+      _intGoodID = A_intGoodID;
+      _intBussID = A_intBussID;
+      _strAttType = A_strAttType;
+      _strCName = A_strCName;
+      _dtmCreateDate = A_dtmCreateDate;
+      _strMemo = A_strMemo;
+      _strOperator = A_strOperator;
+      _strStatus = A_strStatus;
+      _strAuditOpr = A_strAuditOpr;
+      _dtmUpdateDate = A_dtmUpdateDate;
+      _strtasktype = A_strtasktype;
+    } 
+    ///<summary>
+    ///获取属性对应得数据库字段信息
+    ///</summary>
+    public Comm.DBElement GetDBElement(string strPropertyName)
+    {
+        switch (strPropertyName)
+        {
+            case "strAttID":
+            case "strAuditOpr":
+                return new Comm.DBElement(strPropertyName.Substring(3), "uniqueidentifier", 16, strPropertyName);
+            case "intGoodID":
+            case "intBussID":
+                return new Comm.DBElement(strPropertyName.Substring(3), "int", 4, strPropertyName);
+            case "strAttType":
+                return new Comm.DBElement(strPropertyName.Substring(3), "varchar", 50, strPropertyName);
+            case "strCName":
+                return new Comm.DBElement(strPropertyName.Substring(3), "varchar", 255, strPropertyName);
+            case "dtmCreateDate":
+            case "dtmUpdateDate":
+                return new Comm.DBElement(strPropertyName.Substring(3), "datetime", 8, strPropertyName);
+            case "strMemo":
+                return new Comm.DBElement(strPropertyName.Substring(3), "nvarchar", -1, strPropertyName);
+            case "strOperator":
+                return new Comm.DBElement(strPropertyName.Substring(3), "varchar", 100, strPropertyName);
+            case "strStatus":
+                return new Comm.DBElement(strPropertyName.Substring(3), "char", 2, strPropertyName);
+            case "strtasktype":
+                return new Comm.DBElement(strPropertyName.Substring(3), "varchar", 20, strPropertyName);
+            default:
+                return null;
+        }
+    }
+    }  
+}

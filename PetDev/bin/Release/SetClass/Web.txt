@@ -1,0 +1,31 @@
+/// <summary>
+/// 生成Hastable
+/// </summary>
+public HashMap GetUSERInfo()
+{
+ Hashtale objHas = new Hashtale();
+objHas.Add("HRUID", txtHRUID.Text);
+objHas.Add("CTMID", txtCTMID.Text);
+objHas.Add("COID", txtCOID.Text);
+objHas.Add("DIVID", txtDIVID.Text);
+objHas.Add("LOGIN", txtLOGIN.Text);
+objHas.Add("NAME", txtNAME.Text);
+objHas.Add("PASSWORD", txtPASSWORD.Text);
+objHas.Add("AUTHORITY", txtAUTHORITY.Text);
+objHas.Add("SEX", txtSEX.Text);
+objHas.Add("POSITION", txtPOSITION.Text);
+objHas.Add("EMAIL", txtEMAIL.Text);
+objHas.Add("TEL", txtTEL.Text);
+objHas.Add("FAX", txtFAX.Text);
+objHas.Add("CRTDATE", txtCRTDATE.Text);
+objHas.Add("ACCDATE", txtACCDATE.Text);
+objHas.Add("STATUS", txtSTATUS.Text);
+objHas.Add("ACCESSKEY", txtACCESSKEY.Text);
+objHas.Add("NOWLOCK", txtNOWLOCK.Text);
+objHas.Add("LOCKREMAIN", txtLOCKREMAIN.Text);
+objHas.Add("ISSTANDARD", txtISSTANDARD.Text);
+objHas.Add("ISCTMLEVEL", txtISCTMLEVEL.Text);
+objHas.Add("ISRESETPWD", txtISRESETPWD.Text);
+objHas.Add("ISREFRESHJOB", txtISREFRESHJOB.Text);
+ return objHas;
+}

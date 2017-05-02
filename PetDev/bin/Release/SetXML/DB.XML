@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<data>
+  <strPCName>finnet</strPCName>
+  <strDBName>finnet</strDBName>
+  <strUserName>finnet</strUserName>
+  <strPassWord>finnet</strPassWord>
+  <strSQLPath>D:\FinNet\1.0\Log\</strSQLPath>
+  <strLOGPath>D:\FinNet\1.0\Log\</strLOGPath>
+  <strDBPath>D:\FinNet\1.0\tools\代码生成器\PetDev\bin\Release\DBFile\initdata.xls</strDBPath>
+  <strSQLBLLName>BLLOpr</strSQLBLLName>
+  <strSQLBLLNameSP>FinNet.BLL.Coolping.Test</strSQLBLLNameSP>
+</data>

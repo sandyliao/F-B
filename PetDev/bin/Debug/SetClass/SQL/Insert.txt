@@ -1,0 +1,74 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2014-08-27
+/// 功能描述: 插入表数据
+/// </summary>
+/// <param name="p_objMDWithdrawalInfoProviders">
+/// 插入列为:
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   InsertWithdrawalInfoProviders (Model.MDWithdrawalInfoProviders p_objMDWithdrawalInfoProviders)
+    {
+	string strSQL ="";
+	strSQL ="insert into   WithdrawalInfoProviders (  Id,RegisterId,BussID,WithdrawalNo,RankName,CardNo,WithdrawalMoney,Remark,ApplyDate,Audit,Flag,AgoAccount,AfterAccount,BtnBackPay,BtnConfirm,BtnPay,BtnFinish,ALLBankName,BtnCancel ) values ( @Id,@RegisterId,@BussID,@WithdrawalNo,@RankName,@CardNo,@WithdrawalMoney,@Remark,@ApplyDate,@Audit,@Flag,@AgoAccount,@AfterAccount,@BtnBackPay,@BtnConfirm,@BtnPay,@BtnFinish,@ALLBankName,@BtnCancel)";
+SqlParameter[] objParameter = new SqlParameter[19];
+    
+ objParameter[0] = new SqlParameter("@Id", System.Data.SqlDbType.Int , 4);
+ objParameter[0].Value =  p_objMDWithdrawalInfoProviders.intId;
+ 
+ objParameter[1] = new SqlParameter("@RegisterId", System.Data.SqlDbType.Int , 4);
+ objParameter[1].Value =  p_objMDWithdrawalInfoProviders.intRegisterId;
+ 
+ objParameter[2] = new SqlParameter("@BussID", System.Data.SqlDbType.Int , 4);
+ objParameter[2].Value =  p_objMDWithdrawalInfoProviders.intBussID;
+ 
+ objParameter[3] = new SqlParameter("@WithdrawalNo", System.Data.SqlDbType.VarChar , 20);
+ objParameter[3].Value =  p_objMDWithdrawalInfoProviders.strWithdrawalNo;
+ 
+ objParameter[4] = new SqlParameter("@RankName", System.Data.SqlDbType.VarChar , 20);
+ objParameter[4].Value =  p_objMDWithdrawalInfoProviders.strRankName;
+ 
+ objParameter[5] = new SqlParameter("@CardNo", System.Data.SqlDbType.VarChar , 30);
+ objParameter[5].Value =  p_objMDWithdrawalInfoProviders.strCardNo;
+ 
+ objParameter[6] = new SqlParameter("@WithdrawalMoney", System.Data.SqlDbType.VarChar , );
+ objParameter[6].Value =  p_objMDWithdrawalInfoProviders.strWithdrawalMoney;
+ 
+ objParameter[7] = new SqlParameter("@Remark", System.Data.SqlDbType.VarChar , 20);
+ objParameter[7].Value =  p_objMDWithdrawalInfoProviders.strRemark;
+ 
+ objParameter[8] = new SqlParameter("@ApplyDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[8].Value =  p_objMDWithdrawalInfoProviders.dtmApplyDate;
+ 
+ objParameter[9] = new SqlParameter("@Audit", System.Data.SqlDbType.Int , 4);
+ objParameter[9].Value =  p_objMDWithdrawalInfoProviders.intAudit;
+ 
+ objParameter[10] = new SqlParameter("@Flag", System.Data.SqlDbType.Int , 4);
+ objParameter[10].Value =  p_objMDWithdrawalInfoProviders.intFlag;
+ 
+ objParameter[11] = new SqlParameter("@AgoAccount", System.Data.SqlDbType.VarChar , );
+ objParameter[11].Value =  p_objMDWithdrawalInfoProviders.strAgoAccount;
+ 
+ objParameter[12] = new SqlParameter("@AfterAccount", System.Data.SqlDbType.VarChar , );
+ objParameter[12].Value =  p_objMDWithdrawalInfoProviders.strAfterAccount;
+ 
+ objParameter[13] = new SqlParameter("@BtnBackPay", System.Data.SqlDbType.VarChar , 1);
+ objParameter[13].Value =  p_objMDWithdrawalInfoProviders.blnBtnBackPay;
+ 
+ objParameter[14] = new SqlParameter("@BtnConfirm", System.Data.SqlDbType.VarChar , 1);
+ objParameter[14].Value =  p_objMDWithdrawalInfoProviders.blnBtnConfirm;
+ 
+ objParameter[15] = new SqlParameter("@BtnPay", System.Data.SqlDbType.VarChar , 1);
+ objParameter[15].Value =  p_objMDWithdrawalInfoProviders.blnBtnPay;
+ 
+ objParameter[16] = new SqlParameter("@BtnFinish", System.Data.SqlDbType.VarChar , 1);
+ objParameter[16].Value =  p_objMDWithdrawalInfoProviders.blnBtnFinish;
+ 
+ objParameter[17] = new SqlParameter("@ALLBankName", System.Data.SqlDbType.VarChar , 200);
+ objParameter[17].Value =  p_objMDWithdrawalInfoProviders.strALLBankName;
+ 
+ objParameter[18] = new SqlParameter("@BtnCancel", System.Data.SqlDbType.VarChar , 1);
+ objParameter[18].Value =  p_objMDWithdrawalInfoProviders.blnBtnCancel;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }

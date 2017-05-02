@@ -1,0 +1,248 @@
+using System;
+using System.Text;
+using System.Data;
+using System.Collections;
+using System.Data.SqlClient;
+using CardBoss.DBBase;
+namespace ToolTest.BLL
+{
+	///<summary>
+	/// 创建者:     小草
+	/// 创建时间:   2010-09-06
+	/// 修改者:     小草
+	/// 修改时间:   0000-00-00
+	/// 修改内容:   
+	/// 类功能描述: 
+	///</summary>
+    public class BLLOperator:SQLHelper
+      {
+	///<summary>
+	/// 构造函数 
+	///</summary>
+public BLLOperator()
+{
+	//
+	// 在此处添加构造函数逻辑
+	//
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// 1: OprID--用户ID:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetOperatorInfo(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="select OprID,UserName,Passwd,Cname,Email,Tel,RoleID,CreateDate,UpdateDate,LastLoginTime,LastLoginIP,Status  from Operator where OprID=@OprID";
+SqlParameter[] objParameter = new SqlParameter[1];
+
+ objParameter[0] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.intOprID;
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// 1: OprID--用户ID:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetOperatorList(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo,int p_intStart, int p_intPageSize, ref int Out_Count,string p_strOrderBy)
+{
+	SqlParameter[] objParameter = new SqlParameter[0];
+	string strWhere = "";
+	SqlParameter SPNewParm = null;
+	ArrayList listParam = new ArrayList();
+	string strSQL ="";
+	strSQL ="select OprID,UserName,Passwd,Cname,Email,Tel,RoleID,CreateDate,UpdateDate,LastLoginTime,LastLoginIP,Status  from Operator where ";
+
+ if ( p_objMDOperatorInfo.intOprID!= int.MinValue  )
+ {
+ SPNewParm = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ SPNewParm.Value =  p_objMDOperatorInfo.intOprID;
+     listParam.Add(SPNewParm);
+     strWhere += " and OprID =@OprID  ";
+ }
+
+objParameter = (SqlParameter[])listParam.ToArray(typeof(SqlParameter));
+if (p_strOrderBy.Trim() != "")
+{
+    p_strOrderBy = " order by " + p_strOrderBy;
+}
+strSQL = strSQL + strWhere + p_strOrderBy;
+	return this.ExecuteReadTable(strSQL, objParameter,p_intStart,p_intPageSize,ref Out_Count);
+}
+
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 插入表数据
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 插入列为:
+/// 1: UserName--用户名:
+/// 2: Passwd--密码:
+/// 3: Cname--中文名称:
+/// 4: Email--Email:
+/// 5: Tel--联系电话:
+/// 6: RoleID--角色ID:
+/// 7: CreateDate--创建时间:
+/// 8: UpdateDate--更新时间:
+/// 9: LastLoginTime--最后登录时间:
+/// 10: LastLoginIP--最后登录IP:
+/// 11: Status--状态:0-无效 1-有效
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   InsertOperator (ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+    {
+	string strSQL ="";
+	strSQL ="insert into   Operator (  UserName,Passwd,Cname,Email,Tel,RoleID,CreateDate,UpdateDate,LastLoginTime,LastLoginIP,Status ) values ( @UserName,@Passwd,@Cname,@Email,@Tel,@RoleID,@CreateDate,@UpdateDate,@LastLoginTime,@LastLoginIP,@Status)";
+SqlParameter[] objParameter = new SqlParameter[11];
+    
+ objParameter[0] = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar , 50);
+ objParameter[0].Value =  p_objMDOperatorInfo.strUserName;
+ 
+ objParameter[1] = new SqlParameter("@Passwd", System.Data.SqlDbType.VarChar , 150);
+ objParameter[1].Value =  p_objMDOperatorInfo.strPasswd;
+ 
+ objParameter[2] = new SqlParameter("@Cname", System.Data.SqlDbType.VarChar , 50);
+ objParameter[2].Value =  p_objMDOperatorInfo.strCname;
+ 
+ objParameter[3] = new SqlParameter("@Email", System.Data.SqlDbType.VarChar , 80);
+ objParameter[3].Value =  p_objMDOperatorInfo.strEmail;
+ 
+ objParameter[4] = new SqlParameter("@Tel", System.Data.SqlDbType.VarChar , 25);
+ objParameter[4].Value =  p_objMDOperatorInfo.strTel;
+ 
+ objParameter[5] = new SqlParameter("@RoleID", System.Data.SqlDbType.Int , 4);
+ objParameter[5].Value =  p_objMDOperatorInfo.intRoleID;
+ 
+ objParameter[6] = new SqlParameter("@CreateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[6].Value =  p_objMDOperatorInfo.dtmCreateDate;
+ 
+ objParameter[7] = new SqlParameter("@UpdateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[7].Value =  p_objMDOperatorInfo.dtmUpdateDate;
+ 
+ objParameter[8] = new SqlParameter("@LastLoginTime", System.Data.SqlDbType.VarChar , 8);
+ objParameter[8].Value =  p_objMDOperatorInfo.dtmLastLoginTime;
+ 
+ objParameter[9] = new SqlParameter("@LastLoginIP", System.Data.SqlDbType.VarChar , 20);
+ objParameter[9].Value =  p_objMDOperatorInfo.strLastLoginIP;
+ 
+ objParameter[10] = new SqlParameter("@Status", System.Data.SqlDbType.Int , 4);
+ if ( p_objMDOperatorInfo.intStatus== int.MinValue  )
+ {
+ objParameter[10].Value =1;
+ }
+ else
+ {
+ objParameter[10].Value =  p_objMDOperatorInfo.intStatus;
+ }
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }
+
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2010-09-06
+/// 功能描述: 根据条件更新表数据
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 更新条件为:
+/// 1: OprID--用户ID:
+/// 更新字段为:
+/// 1: OprID--用户ID:
+/// 2: UserName--用户名:
+/// 3: Passwd--密码:
+/// 4: Cname--中文名称:
+/// 5: Email--Email:
+/// 6: Tel--联系电话:
+/// 7: RoleID--角色ID:
+/// 8: CreateDate--创建时间:
+/// 9: UpdateDate--更新时间:
+/// 10: LastLoginTime--最后登录时间:
+/// 11: LastLoginIP--最后登录IP:
+/// 12: Status--状态:0-无效 1-有效
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   UpdateOperator (ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+    {
+	string strSQL ="";
+	strSQL ="update  Operator set  OprID=@OprID,UserName=@UserName,Passwd=@Passwd,Cname=@Cname,Email=@Email,Tel=@Tel,RoleID=@RoleID,CreateDate=@CreateDate,UpdateDate=@UpdateDate,LastLoginTime=@LastLoginTime,LastLoginIP=@LastLoginIP,Status=@Status    where OprID=@OprID";
+SqlParameter[] objParameter = new SqlParameter[13];
+ 
+    
+ objParameter[0] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.intOprID;
+ 
+ objParameter[1] = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar , 50);
+ objParameter[1].Value =  p_objMDOperatorInfo.strUserName;
+ 
+ objParameter[2] = new SqlParameter("@Passwd", System.Data.SqlDbType.VarChar , 150);
+ objParameter[2].Value =  p_objMDOperatorInfo.strPasswd;
+ 
+ objParameter[3] = new SqlParameter("@Cname", System.Data.SqlDbType.VarChar , 50);
+ objParameter[3].Value =  p_objMDOperatorInfo.strCname;
+ 
+ objParameter[4] = new SqlParameter("@Email", System.Data.SqlDbType.VarChar , 80);
+ objParameter[4].Value =  p_objMDOperatorInfo.strEmail;
+ 
+ objParameter[5] = new SqlParameter("@Tel", System.Data.SqlDbType.VarChar , 25);
+ objParameter[5].Value =  p_objMDOperatorInfo.strTel;
+ 
+ objParameter[6] = new SqlParameter("@RoleID", System.Data.SqlDbType.Int , 4);
+ objParameter[6].Value =  p_objMDOperatorInfo.intRoleID;
+ 
+ objParameter[7] = new SqlParameter("@CreateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[7].Value =  p_objMDOperatorInfo.dtmCreateDate;
+ 
+ objParameter[8] = new SqlParameter("@UpdateDate", System.Data.SqlDbType.VarChar , 8);
+ objParameter[8].Value =  p_objMDOperatorInfo.dtmUpdateDate;
+ 
+ objParameter[9] = new SqlParameter("@LastLoginTime", System.Data.SqlDbType.VarChar , 8);
+ objParameter[9].Value =  p_objMDOperatorInfo.dtmLastLoginTime;
+ 
+ objParameter[10] = new SqlParameter("@LastLoginIP", System.Data.SqlDbType.VarChar , 20);
+ objParameter[10].Value =  p_objMDOperatorInfo.strLastLoginIP;
+ 
+ objParameter[11] = new SqlParameter("@Status", System.Data.SqlDbType.Int , 4);
+ objParameter[11].Value =  p_objMDOperatorInfo.intStatus;
+ 
+ objParameter[12] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParameter[12].Value =  p_objMDOperatorInfo.intOprID;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }
+
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 条件参数为:
+/// 1: OprID--用户ID:
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  DeleteOperatorInfo(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="delete     from Operator where OprID=@OprID";
+SqlParameter[] objParmas = new SqlParameter[1];
+ objParmas[0] = new SqlParameter("@OprID", System.Data.SqlDbType.Int , 4);
+ objParmas[0].Value = p_objMDOperatorInfo.intOprID;
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}
+
+}
+}

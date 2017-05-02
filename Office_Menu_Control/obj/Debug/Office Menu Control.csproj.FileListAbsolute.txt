@@ -1,0 +1,22 @@
+D:\HRO_2013\tool\Office Menu Control\bin\Debug\Office Menu Control.dll
+D:\HRO_2013\tool\Office Menu Control\bin\Debug\Office Menu Control.pdb
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\ResolveAssemblyReference.cache
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\Dev4Arabs.OfficeMenus.resources
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\GenerateResource-ResGen.read.1.tlog
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\GenerateResource-ResGen.write.1.tlog
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.dll
+D:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.pdb
+H:\HRO_2013\tool\Office Menu Control\bin\Debug\Office Menu Control.dll
+H:\HRO_2013\tool\Office Menu Control\bin\Debug\Office Menu Control.pdb
+H:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.csprojResolveAssemblyReference.cache
+H:\HRO_2013\tool\Office Menu Control\obj\Debug\Dev4Arabs.OfficeMenus.resources
+H:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.csproj.GenerateResource.Cache
+H:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.dll
+H:\HRO_2013\tool\Office Menu Control\obj\Debug\Office Menu Control.pdb
+F:\1.250code\weifanqi\tool\Office Menu Control\bin\Debug\Office Menu Control.dll
+F:\1.250code\weifanqi\tool\Office Menu Control\bin\Debug\Office Menu Control.pdb
+F:\1.250code\weifanqi\tool\Office Menu Control\obj\Debug\Office Menu Control.csprojResolveAssemblyReference.cache
+F:\1.250code\weifanqi\tool\Office Menu Control\obj\Debug\Dev4Arabs.OfficeMenus.resources
+F:\1.250code\weifanqi\tool\Office Menu Control\obj\Debug\Office Menu Control.csproj.GenerateResource.Cache
+F:\1.250code\weifanqi\tool\Office Menu Control\obj\Debug\Office Menu Control.dll
+F:\1.250code\weifanqi\tool\Office Menu Control\obj\Debug\Office Menu Control.pdb

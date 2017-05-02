@@ -1,0 +1,24 @@
+/// <summary>
+/// 生成Hastable
+/// </summary>
+public HashMap GetP_E_USERLOGINInfo()
+{
+ Hashtale objHas = new Hashtale();
+objHas.Add("PUSERNAME", txtPUSERNAME.Text);//IN
+objHas.Add("PCTMID", txtPCTMID.Text);//IN
+objHas.Add("PPASSWORD", txtPPASSWORD.Text);//IN
+objHas.Add("PUSERIP", txtPUSERIP.Text);//IN
+objHas.Add("PACCESSKEY", txtPACCESSKEY.Text);//IN
+objHas.Add("INTERROR", txtINTERROR.Text);//OUT
+objHas.Add("INTHRUID", txtINTHRUID.Text);//OUT
+objHas.Add("STRUSERAUTHORITY", txtSTRUSERAUTHORITY.Text);//OUT
+objHas.Add("STRISCTMLEVLE", txtSTRISCTMLEVLE.Text);//OUT
+objHas.Add("STRUSERNAME", txtSTRUSERNAME.Text);//OUT
+objHas.Add("DTMLOGINTIME", txtDTMLOGINTIME.Text);//IN
+objHas.Add("STRCTMAUTHORITY", txtSTRCTMAUTHORITY.Text);//OUT
+objHas.Add("STRISSTANDARD", txtSTRISSTANDARD.Text);//OUT
+objHas.Add("POLDACCESSKEY", txtPOLDACCESSKEY.Text);//IN
+objHas.Add("PISRELEASEPOS", txtPISRELEASEPOS.Text);//OUT
+objHas.Add("PISRESETPWD", txtPISRESETPWD.Text);//OUT
+ return objHas;
+}

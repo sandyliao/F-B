@@ -1,0 +1,231 @@
+using System;
+namespace ToolTest.Modules 
+{
+  public class  MDOperatorInfo
+  {
+ 
+      //**********************************************
+      //* [小草]2010-9-6
+      //* ToolTest.ModulesMDOperatorInfo类*
+      //**********************************************
+ 
+  public   MDOperatorInfo()
+    { 
+        //构造函数
+    }
+public   string  strTableName
+{
+	get 
+	{
+		return  "Operator";
+	}
+}
+    private  int  _intOprID=int.MinValue;
+    ///<summary>
+    ///用户ID:
+    ///</summary>
+    public   int  intOprID
+    {
+      get 
+        {
+           return  _intOprID;
+        }
+      set 
+        {
+           _intOprID= value;
+        }
+    }
+  
+    private  string  _strUserName;
+    ///<summary>
+    ///用户名:
+    ///</summary>
+    public   string  strUserName
+    {
+      get 
+        {
+           return  _strUserName;
+        }
+      set 
+        {
+           _strUserName= value;
+        }
+    }
+  
+    private  string  _strPasswd;
+    ///<summary>
+    ///密码:
+    ///</summary>
+    public   string  strPasswd
+    {
+      get 
+        {
+           return  _strPasswd;
+        }
+      set 
+        {
+           _strPasswd= value;
+        }
+    }
+  
+    private  string  _strCname;
+    ///<summary>
+    ///中文名称:
+    ///</summary>
+    public   string  strCname
+    {
+      get 
+        {
+           return  _strCname;
+        }
+      set 
+        {
+           _strCname= value;
+        }
+    }
+  
+    private  string  _strEmail;
+    ///<summary>
+    ///Email:
+    ///</summary>
+    public   string  strEmail
+    {
+      get 
+        {
+           return  _strEmail;
+        }
+      set 
+        {
+           _strEmail= value;
+        }
+    }
+  
+    private  string  _strTel;
+    ///<summary>
+    ///联系电话:
+    ///</summary>
+    public   string  strTel
+    {
+      get 
+        {
+           return  _strTel;
+        }
+      set 
+        {
+           _strTel= value;
+        }
+    }
+  
+    private  int  _intRoleID=int.MinValue;
+    ///<summary>
+    ///角色ID:
+    ///</summary>
+    public   int  intRoleID
+    {
+      get 
+        {
+           return  _intRoleID;
+        }
+      set 
+        {
+           _intRoleID= value;
+        }
+    }
+  
+    private  DateTime  _dtmCreateDate=DateTime.MinValue;
+    ///<summary>
+    ///创建时间:
+    ///</summary>
+    public   DateTime  dtmCreateDate
+    {
+      get 
+        {
+           return  _dtmCreateDate;
+        }
+      set 
+        {
+           _dtmCreateDate= value;
+        }
+    }
+  
+    private  DateTime  _dtmUpdateDate=DateTime.MinValue;
+    ///<summary>
+    ///更新时间:
+    ///</summary>
+    public   DateTime  dtmUpdateDate
+    {
+      get 
+        {
+           return  _dtmUpdateDate;
+        }
+      set 
+        {
+           _dtmUpdateDate= value;
+        }
+    }
+  
+    private  DateTime  _dtmLastLoginTime=DateTime.MinValue;
+    ///<summary>
+    ///最后登录时间:
+    ///</summary>
+    public   DateTime  dtmLastLoginTime
+    {
+      get 
+        {
+           return  _dtmLastLoginTime;
+        }
+      set 
+        {
+           _dtmLastLoginTime= value;
+        }
+    }
+  
+    private  string  _strLastLoginIP;
+    ///<summary>
+    ///最后登录IP:
+    ///</summary>
+    public   string  strLastLoginIP
+    {
+      get 
+        {
+           return  _strLastLoginIP;
+        }
+      set 
+        {
+           _strLastLoginIP= value;
+        }
+    }
+  
+    private  int  _intStatus=int.MinValue;
+    ///<summary>
+    ///状态:0-无效 1-有效
+    ///</summary>
+    public   int  intStatus
+    {
+      get 
+        {
+           return  _intStatus;
+        }
+      set 
+        {
+           _intStatus= value;
+        }
+    }
+  
+    public MDOperatorInfo( int A_intOprID, string A_strUserName, string A_strPasswd, string A_strCname, string A_strEmail, string A_strTel, int A_intRoleID, DateTime A_dtmCreateDate, DateTime A_dtmUpdateDate, DateTime A_dtmLastLoginTime, string A_strLastLoginIP, int A_intStatus )
+    { 
+      _intOprID = A_intOprID;
+      _strUserName = A_strUserName;
+      _strPasswd = A_strPasswd;
+      _strCname = A_strCname;
+      _strEmail = A_strEmail;
+      _strTel = A_strTel;
+      _intRoleID = A_intRoleID;
+      _dtmCreateDate = A_dtmCreateDate;
+      _dtmUpdateDate = A_dtmUpdateDate;
+      _dtmLastLoginTime = A_dtmLastLoginTime;
+      _strLastLoginIP = A_strLastLoginIP;
+      _intStatus = A_intStatus;
+    } 
+    }  
+}

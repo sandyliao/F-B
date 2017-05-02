@@ -1,0 +1,21 @@
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2008-10-15
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name="p_hasWhere">
+/// 查询条件HashTable的Key为:
+/// 1: HRUID
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetUSERInfo(Hashtable p_hasWhere)
+{
+	string strSQL ="";
+	strSQL ="select HRUID,CTMID,COID,DIVID,LOGIN,NAME,PASSWORD,AUTHORITY,SEX,POSITION,EMAIL,TEL,FAX,CRTDATE,ACCDATE,STATUS,ACCESSKEY,NOWLOCK,LOCKREMAIN,ISSTANDARD,ISCTMLEVEL,ISRESETPWD,ISREFRESHJOB  from S_USER where HRUID=:HRUID";
+OracleParameter[] objParameter = new OracleParameter[1];
+
+ objParameter[0] = new OracleParameter(":HRUID", System.Data.OracleClient.OracleType.Number , 10);
+ objParameter[0].Value = p_hasWhere["HRUID"];
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}

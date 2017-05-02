@@ -1,0 +1,24 @@
+public int ExceSp(Hashtable p_objParams)
+{
+SqlParameter[] parameters = new SqlParameter[1];
+parameters[0] =new SqlParameter("@c1",SqlDbType.NChar,20); 
+parameters[0].Value=p_objParams["c1"]; 
+parameters[1] =new SqlParameter("@c2",SqlDbType.NChar,20); 
+parameters[1].Value=p_objParams["c2"];
+this.BeginTransaction() ;
+int iReturn = -1 ;
+this.ExecuteSP ("AddEvent",parameters) ;
+if (parameters[0].Value != System.DBNull.Value)
+{
+	iReturn = Convert.ToInt32(parameters[0].Value);
+}
+if (iReturn == 0)
+{
+ this.CommitTransection();
+}
+else
+{
+  this.RollbackTransection();;
+}
+	return iReturn ;
+}

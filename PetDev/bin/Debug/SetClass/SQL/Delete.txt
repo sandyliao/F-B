@@ -1,0 +1,28 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2011-04-12
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objMDOpr">
+/// 条件参数为:
+/// 1: OrgID--角色ID:
+/// 2: OrgCode--组织编码:
+/// 3: CreateDate--生成日期:
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  DeleteOrgInfo(eHR.Modules.MDOpr p_objMDOpr)
+{
+	string strSQL ="";
+	strSQL ="delete     from Org where OrgID=@OrgID and OrgCode=@OrgCode and CreateDate=@CreateDate";
+SqlParameter[] objParmas = new SqlParameter[3];
+ objParmas[0] = new SqlParameter("@OrgID", System.Data.SqlDbType.Int , 4);
+ objParmas[0].Value = p_objMDOpr.intOrgID;
+ 
+ objParmas[1] = new SqlParameter("@OrgCode", System.Data.SqlDbType.VarChar , 255);
+ objParmas[1].Value = p_objMDOpr.strOrgCode;
+ 
+ objParmas[2] = new SqlParameter("@CreateDate", System.Data.SqlDbType.VarChar , 8);
+ objParmas[2].Value = p_objMDOpr.dtmCreateDate;
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}

@@ -1,0 +1,37 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-09-06
+/// 功能描述: 插入表数据
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 插入列为:
+/// 1: UserName--用户名:
+/// 2: Passwd--密码:
+/// 3: Cname--中文名称:
+/// 4: Email--Email:
+/// 5: LastLoginIP--最后登录IP:
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   InsertOperator (ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+    {
+	string strSQL ="";
+	strSQL ="insert into   Operator (  UserName,Passwd,Cname,Email,LastLoginIP ) values ( @UserName,@Passwd,@Cname,@Email,@LastLoginIP)";
+SqlParameter[] objParameter = new SqlParameter[5];
+    
+ objParameter[0] = new SqlParameter("@UserName", System.Data.SqlDbType.VarChar , 50);
+ objParameter[0].Value =  p_objMDOperatorInfo.strUserName;
+ 
+ objParameter[1] = new SqlParameter("@Passwd", System.Data.SqlDbType.VarChar , 150);
+ objParameter[1].Value =  p_objMDOperatorInfo.strPasswd;
+ 
+ objParameter[2] = new SqlParameter("@Cname", System.Data.SqlDbType.VarChar , 50);
+ objParameter[2].Value =  p_objMDOperatorInfo.strCname;
+ 
+ objParameter[3] = new SqlParameter("@Email", System.Data.SqlDbType.VarChar , 80);
+ objParameter[3].Value =  p_objMDOperatorInfo.strEmail;
+ 
+ objParameter[4] = new SqlParameter("@LastLoginIP", System.Data.SqlDbType.VarChar , 20);
+ objParameter[4].Value =  p_objMDOperatorInfo.strLastLoginIP;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }

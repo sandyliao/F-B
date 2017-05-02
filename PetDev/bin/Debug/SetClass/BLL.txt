@@ -1,0 +1,391 @@
+using System;
+using System.Text;
+using System.Data;
+using System.Collections;
+using System.Data.SqlClient;
+using CardBoss.DBBase;
+namespace Tom.BLL
+{
+	///<summary>
+	/// 创建者:     小草
+	/// 创建时间:   2010-10-09
+	/// 修改者:     小草
+	/// 修改时间:   0000-00-00
+	/// 修改内容:   
+	/// 类功能描述: 
+	///</summary>
+    public class BLLOperator:SQLHelper
+      {
+	///<summary>
+	/// 构造函数 
+	///</summary>
+public BLLOperator()
+{
+	//
+	// 在此处添加构造函数逻辑
+	//
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable Gett_090218Info(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="select ContractNo,appdate,ID,SupplierName,PayDate,CustomerID,Type,IsAdjData,PPID,CustomerCode,CustomerID_CRM,Supplier_CRM,Type_CRM,Product,Memo,EHSaleID,EHSaleID_CRM,OrderID_CRM,Employees,Amt,Status,VerifyStatus,UpdateDate,Applier,ApplierDate,Approver,PayApplierDate,SyncDate,SyncMemo,PaymentID,EHSaleID1_CRM,EHSaleID1,IsSecondPay,ContractID,PaidAmt,PrepareAmt,CustomerFeeAmt,IsCreateContract,CRMPayDate,DePaySupplierID,F41  from t_090218 where appdate=@appdate";
+SqlParameter[] objParameter = new SqlParameter[1];
+
+ objParameter[0] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.dtmappdate;
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable Gett_090218List(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo,int p_intStart, int p_intPageSize, ref int Out_Count,string p_strOrderBy)
+{
+	SqlParameter[] objParameter = new SqlParameter[0];
+	string strWhere = "";
+	SqlParameter SPNewParm = null;
+	ArrayList listParam = new ArrayList();
+	string strSQL ="";
+	strSQL ="select ContractNo,appdate,ID,SupplierName,PayDate,CustomerID,Type,IsAdjData,PPID,CustomerCode,CustomerID_CRM,Supplier_CRM,Type_CRM,Product,Memo,EHSaleID,EHSaleID_CRM,OrderID_CRM,Employees,Amt,Status,VerifyStatus,UpdateDate,Applier,ApplierDate,Approver,PayApplierDate,SyncDate,SyncMemo,PaymentID,EHSaleID1_CRM,EHSaleID1,IsSecondPay,ContractID,PaidAmt,PrepareAmt,CustomerFeeAmt,IsCreateContract,CRMPayDate,DePaySupplierID,F41  from t_090218 where ";
+
+ if ( p_objMDOperatorInfo.dtmappdate!= "" && p_objMDOperatorInfo.dtmappdate!= null)
+ {
+ SPNewParm = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ SPNewParm.Value =  p_objMDOperatorInfo.dtmappdate;
+     listParam.Add(SPNewParm);
+     strWhere += " and appdate =@appdate  ";
+ }
+
+objParameter = (SqlParameter[])listParam.ToArray(typeof(SqlParameter));
+if (p_strOrderBy.Trim() != "")
+{
+    p_strOrderBy = " order by " + p_strOrderBy;
+}
+strSQL = strSQL + strWhere + p_strOrderBy;
+	return this.ExecuteReadTable(strSQL, objParameter,p_intStart,p_intPageSize,ref Out_Count);
+}
+
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 插入表数据
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 插入列为:
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   Insertt_090218 (ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+    {
+	string strSQL ="";
+	strSQL ="insert into   t_090218 (  ContractNo,appdate,ID,SupplierName,PayDate,CustomerID,Type,IsAdjData,PPID,CustomerCode,CustomerID_CRM,Supplier_CRM,Type_CRM,Product,Memo,EHSaleID,EHSaleID_CRM,OrderID_CRM,Employees,Amt,Status,VerifyStatus,UpdateDate,Applier,ApplierDate,Approver,PayApplierDate,SyncDate,SyncMemo,PaymentID,EHSaleID1_CRM,EHSaleID1,IsSecondPay,ContractID,PaidAmt,PrepareAmt,CustomerFeeAmt,IsCreateContract,CRMPayDate,DePaySupplierID,F41 ) values ( @ContractNo,@appdate,@ID,@SupplierName,@PayDate,@CustomerID,@Type,@IsAdjData,@PPID,@CustomerCode,@CustomerID_CRM,@Supplier_CRM,@Type_CRM,@Product,@Memo,@EHSaleID,@EHSaleID_CRM,@OrderID_CRM,@Employees,@Amt,@Status,@VerifyStatus,@UpdateDate,@Applier,@ApplierDate,@Approver,@PayApplierDate,@SyncDate,@SyncMemo,@PaymentID,@EHSaleID1_CRM,@EHSaleID1,@IsSecondPay,@ContractID,@PaidAmt,@PrepareAmt,@CustomerFeeAmt,@IsCreateContract,@CRMPayDate,@DePaySupplierID,@F41)";
+SqlParameter[] objParameter = new SqlParameter[41];
+    
+ objParameter[0] = new SqlParameter("@ContractNo", System.Data.SqlDbType.VarChar , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.numContractNo;
+ 
+ objParameter[1] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[1].Value =  p_objMDOperatorInfo.dtmappdate;
+ 
+ objParameter[2] = new SqlParameter("@ID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[2].Value =  p_objMDOperatorInfo.strID;
+ 
+ objParameter[3] = new SqlParameter("@SupplierName", System.Data.SqlDbType.VarChar , 255);
+ objParameter[3].Value =  p_objMDOperatorInfo.strSupplierName;
+ 
+ objParameter[4] = new SqlParameter("@PayDate", System.Data.SqlDbType.Float , 8);
+ objParameter[4].Value =  p_objMDOperatorInfo.fltPayDate;
+ 
+ objParameter[5] = new SqlParameter("@CustomerID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[5].Value =  p_objMDOperatorInfo.strCustomerID;
+ 
+ objParameter[6] = new SqlParameter("@Type", System.Data.SqlDbType.Float , 8);
+ objParameter[6].Value =  p_objMDOperatorInfo.fltType;
+ 
+ objParameter[7] = new SqlParameter("@IsAdjData", System.Data.SqlDbType.Float , 8);
+ objParameter[7].Value =  p_objMDOperatorInfo.fltIsAdjData;
+ 
+ objParameter[8] = new SqlParameter("@PPID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[8].Value =  p_objMDOperatorInfo.strPPID;
+ 
+ objParameter[9] = new SqlParameter("@CustomerCode", System.Data.SqlDbType.VarChar , 255);
+ objParameter[9].Value =  p_objMDOperatorInfo.strCustomerCode;
+ 
+ objParameter[10] = new SqlParameter("@CustomerID_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[10].Value =  p_objMDOperatorInfo.fltCustomerID_CRM;
+ 
+ objParameter[11] = new SqlParameter("@Supplier_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[11].Value =  p_objMDOperatorInfo.fltSupplier_CRM;
+ 
+ objParameter[12] = new SqlParameter("@Type_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[12].Value =  p_objMDOperatorInfo.strType_CRM;
+ 
+ objParameter[13] = new SqlParameter("@Product", System.Data.SqlDbType.VarChar , 255);
+ objParameter[13].Value =  p_objMDOperatorInfo.strProduct;
+ 
+ objParameter[14] = new SqlParameter("@Memo", System.Data.SqlDbType.VarChar , 255);
+ objParameter[14].Value =  p_objMDOperatorInfo.strMemo;
+ 
+ objParameter[15] = new SqlParameter("@EHSaleID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[15].Value =  p_objMDOperatorInfo.strEHSaleID;
+ 
+ objParameter[16] = new SqlParameter("@EHSaleID_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[16].Value =  p_objMDOperatorInfo.fltEHSaleID_CRM;
+ 
+ objParameter[17] = new SqlParameter("@OrderID_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[17].Value =  p_objMDOperatorInfo.strOrderID_CRM;
+ 
+ objParameter[18] = new SqlParameter("@Employees", System.Data.SqlDbType.Float , 8);
+ objParameter[18].Value =  p_objMDOperatorInfo.fltEmployees;
+ 
+ objParameter[19] = new SqlParameter("@Amt", System.Data.SqlDbType.Float , 8);
+ objParameter[19].Value =  p_objMDOperatorInfo.fltAmt;
+ 
+ objParameter[20] = new SqlParameter("@Status", System.Data.SqlDbType.Float , 8);
+ objParameter[20].Value =  p_objMDOperatorInfo.fltStatus;
+ 
+ objParameter[21] = new SqlParameter("@VerifyStatus", System.Data.SqlDbType.VarChar , 255);
+ objParameter[21].Value =  p_objMDOperatorInfo.strVerifyStatus;
+ 
+ objParameter[22] = new SqlParameter("@UpdateDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[22].Value =  p_objMDOperatorInfo.dtmUpdateDate;
+ 
+ objParameter[23] = new SqlParameter("@Applier", System.Data.SqlDbType.VarChar , 255);
+ objParameter[23].Value =  p_objMDOperatorInfo.strApplier;
+ 
+ objParameter[24] = new SqlParameter("@ApplierDate", System.Data.SqlDbType.VarChar , 255);
+ objParameter[24].Value =  p_objMDOperatorInfo.strApplierDate;
+ 
+ objParameter[25] = new SqlParameter("@Approver", System.Data.SqlDbType.VarChar , 255);
+ objParameter[25].Value =  p_objMDOperatorInfo.strApprover;
+ 
+ objParameter[26] = new SqlParameter("@PayApplierDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[26].Value =  p_objMDOperatorInfo.dtmPayApplierDate;
+ 
+ objParameter[27] = new SqlParameter("@SyncDate", System.Data.SqlDbType.VarChar , 255);
+ objParameter[27].Value =  p_objMDOperatorInfo.strSyncDate;
+ 
+ objParameter[28] = new SqlParameter("@SyncMemo", System.Data.SqlDbType.VarChar , 255);
+ objParameter[28].Value =  p_objMDOperatorInfo.strSyncMemo;
+ 
+ objParameter[29] = new SqlParameter("@PaymentID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[29].Value =  p_objMDOperatorInfo.strPaymentID;
+ 
+ objParameter[30] = new SqlParameter("@EHSaleID1_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[30].Value =  p_objMDOperatorInfo.strEHSaleID1_CRM;
+ 
+ objParameter[31] = new SqlParameter("@EHSaleID1", System.Data.SqlDbType.VarChar , 255);
+ objParameter[31].Value =  p_objMDOperatorInfo.strEHSaleID1;
+ 
+ objParameter[32] = new SqlParameter("@IsSecondPay", System.Data.SqlDbType.Float , 8);
+ objParameter[32].Value =  p_objMDOperatorInfo.fltIsSecondPay;
+ 
+ objParameter[33] = new SqlParameter("@ContractID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[33].Value =  p_objMDOperatorInfo.strContractID;
+ 
+ objParameter[34] = new SqlParameter("@PaidAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[34].Value =  p_objMDOperatorInfo.fltPaidAmt;
+ 
+ objParameter[35] = new SqlParameter("@PrepareAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[35].Value =  p_objMDOperatorInfo.fltPrepareAmt;
+ 
+ objParameter[36] = new SqlParameter("@CustomerFeeAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[36].Value =  p_objMDOperatorInfo.fltCustomerFeeAmt;
+ 
+ objParameter[37] = new SqlParameter("@IsCreateContract", System.Data.SqlDbType.Float , 8);
+ objParameter[37].Value =  p_objMDOperatorInfo.fltIsCreateContract;
+ 
+ objParameter[38] = new SqlParameter("@CRMPayDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[38].Value =  p_objMDOperatorInfo.dtmCRMPayDate;
+ 
+ objParameter[39] = new SqlParameter("@DePaySupplierID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[39].Value =  p_objMDOperatorInfo.strDePaySupplierID;
+ 
+ objParameter[40] = new SqlParameter("@F41", System.Data.SqlDbType.VarChar , 255);
+ objParameter[40].Value =  p_objMDOperatorInfo.strF41;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }
+
+/// <summary>
+/// 作者:     ***
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件更新表数据
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 更新条件为:
+/// 更新字段为:
+/// </param>
+/// <returns>返回影响行数</returns>
+    public  int   Updatet_090218 (ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+    {
+	string strSQL ="";
+	strSQL ="update  t_090218 set  ContractNo=@ContractNo,appdate=@appdate,ID=@ID,SupplierName=@SupplierName,PayDate=@PayDate,CustomerID=@CustomerID,Type=@Type,IsAdjData=@IsAdjData,PPID=@PPID,CustomerCode=@CustomerCode,CustomerID_CRM=@CustomerID_CRM,Supplier_CRM=@Supplier_CRM,Type_CRM=@Type_CRM,Product=@Product,Memo=@Memo,EHSaleID=@EHSaleID,EHSaleID_CRM=@EHSaleID_CRM,OrderID_CRM=@OrderID_CRM,Employees=@Employees,Amt=@Amt,Status=@Status,VerifyStatus=@VerifyStatus,UpdateDate=@UpdateDate,Applier=@Applier,ApplierDate=@ApplierDate,Approver=@Approver,PayApplierDate=@PayApplierDate,SyncDate=@SyncDate,SyncMemo=@SyncMemo,PaymentID=@PaymentID,EHSaleID1_CRM=@EHSaleID1_CRM,EHSaleID1=@EHSaleID1,IsSecondPay=@IsSecondPay,ContractID=@ContractID,PaidAmt=@PaidAmt,PrepareAmt=@PrepareAmt,CustomerFeeAmt=@CustomerFeeAmt,IsCreateContract=@IsCreateContract,CRMPayDate=@CRMPayDate,DePaySupplierID=@DePaySupplierID,F41=@F41    where appdate=@appdate";
+SqlParameter[] objParameter = new SqlParameter[42];
+ 
+    
+ objParameter[0] = new SqlParameter("@ContractNo", System.Data.SqlDbType.VarChar , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.numContractNo;
+ 
+ objParameter[1] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[1].Value =  p_objMDOperatorInfo.dtmappdate;
+ 
+ objParameter[2] = new SqlParameter("@ID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[2].Value =  p_objMDOperatorInfo.strID;
+ 
+ objParameter[3] = new SqlParameter("@SupplierName", System.Data.SqlDbType.VarChar , 255);
+ objParameter[3].Value =  p_objMDOperatorInfo.strSupplierName;
+ 
+ objParameter[4] = new SqlParameter("@PayDate", System.Data.SqlDbType.Float , 8);
+ objParameter[4].Value =  p_objMDOperatorInfo.fltPayDate;
+ 
+ objParameter[5] = new SqlParameter("@CustomerID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[5].Value =  p_objMDOperatorInfo.strCustomerID;
+ 
+ objParameter[6] = new SqlParameter("@Type", System.Data.SqlDbType.Float , 8);
+ objParameter[6].Value =  p_objMDOperatorInfo.fltType;
+ 
+ objParameter[7] = new SqlParameter("@IsAdjData", System.Data.SqlDbType.Float , 8);
+ objParameter[7].Value =  p_objMDOperatorInfo.fltIsAdjData;
+ 
+ objParameter[8] = new SqlParameter("@PPID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[8].Value =  p_objMDOperatorInfo.strPPID;
+ 
+ objParameter[9] = new SqlParameter("@CustomerCode", System.Data.SqlDbType.VarChar , 255);
+ objParameter[9].Value =  p_objMDOperatorInfo.strCustomerCode;
+ 
+ objParameter[10] = new SqlParameter("@CustomerID_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[10].Value =  p_objMDOperatorInfo.fltCustomerID_CRM;
+ 
+ objParameter[11] = new SqlParameter("@Supplier_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[11].Value =  p_objMDOperatorInfo.fltSupplier_CRM;
+ 
+ objParameter[12] = new SqlParameter("@Type_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[12].Value =  p_objMDOperatorInfo.strType_CRM;
+ 
+ objParameter[13] = new SqlParameter("@Product", System.Data.SqlDbType.VarChar , 255);
+ objParameter[13].Value =  p_objMDOperatorInfo.strProduct;
+ 
+ objParameter[14] = new SqlParameter("@Memo", System.Data.SqlDbType.VarChar , 255);
+ objParameter[14].Value =  p_objMDOperatorInfo.strMemo;
+ 
+ objParameter[15] = new SqlParameter("@EHSaleID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[15].Value =  p_objMDOperatorInfo.strEHSaleID;
+ 
+ objParameter[16] = new SqlParameter("@EHSaleID_CRM", System.Data.SqlDbType.Float , 8);
+ objParameter[16].Value =  p_objMDOperatorInfo.fltEHSaleID_CRM;
+ 
+ objParameter[17] = new SqlParameter("@OrderID_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[17].Value =  p_objMDOperatorInfo.strOrderID_CRM;
+ 
+ objParameter[18] = new SqlParameter("@Employees", System.Data.SqlDbType.Float , 8);
+ objParameter[18].Value =  p_objMDOperatorInfo.fltEmployees;
+ 
+ objParameter[19] = new SqlParameter("@Amt", System.Data.SqlDbType.Float , 8);
+ objParameter[19].Value =  p_objMDOperatorInfo.fltAmt;
+ 
+ objParameter[20] = new SqlParameter("@Status", System.Data.SqlDbType.Float , 8);
+ objParameter[20].Value =  p_objMDOperatorInfo.fltStatus;
+ 
+ objParameter[21] = new SqlParameter("@VerifyStatus", System.Data.SqlDbType.VarChar , 255);
+ objParameter[21].Value =  p_objMDOperatorInfo.strVerifyStatus;
+ 
+ objParameter[22] = new SqlParameter("@UpdateDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[22].Value =  p_objMDOperatorInfo.dtmUpdateDate;
+ 
+ objParameter[23] = new SqlParameter("@Applier", System.Data.SqlDbType.VarChar , 255);
+ objParameter[23].Value =  p_objMDOperatorInfo.strApplier;
+ 
+ objParameter[24] = new SqlParameter("@ApplierDate", System.Data.SqlDbType.VarChar , 255);
+ objParameter[24].Value =  p_objMDOperatorInfo.strApplierDate;
+ 
+ objParameter[25] = new SqlParameter("@Approver", System.Data.SqlDbType.VarChar , 255);
+ objParameter[25].Value =  p_objMDOperatorInfo.strApprover;
+ 
+ objParameter[26] = new SqlParameter("@PayApplierDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[26].Value =  p_objMDOperatorInfo.dtmPayApplierDate;
+ 
+ objParameter[27] = new SqlParameter("@SyncDate", System.Data.SqlDbType.VarChar , 255);
+ objParameter[27].Value =  p_objMDOperatorInfo.strSyncDate;
+ 
+ objParameter[28] = new SqlParameter("@SyncMemo", System.Data.SqlDbType.VarChar , 255);
+ objParameter[28].Value =  p_objMDOperatorInfo.strSyncMemo;
+ 
+ objParameter[29] = new SqlParameter("@PaymentID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[29].Value =  p_objMDOperatorInfo.strPaymentID;
+ 
+ objParameter[30] = new SqlParameter("@EHSaleID1_CRM", System.Data.SqlDbType.VarChar , 255);
+ objParameter[30].Value =  p_objMDOperatorInfo.strEHSaleID1_CRM;
+ 
+ objParameter[31] = new SqlParameter("@EHSaleID1", System.Data.SqlDbType.VarChar , 255);
+ objParameter[31].Value =  p_objMDOperatorInfo.strEHSaleID1;
+ 
+ objParameter[32] = new SqlParameter("@IsSecondPay", System.Data.SqlDbType.Float , 8);
+ objParameter[32].Value =  p_objMDOperatorInfo.fltIsSecondPay;
+ 
+ objParameter[33] = new SqlParameter("@ContractID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[33].Value =  p_objMDOperatorInfo.strContractID;
+ 
+ objParameter[34] = new SqlParameter("@PaidAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[34].Value =  p_objMDOperatorInfo.fltPaidAmt;
+ 
+ objParameter[35] = new SqlParameter("@PrepareAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[35].Value =  p_objMDOperatorInfo.fltPrepareAmt;
+ 
+ objParameter[36] = new SqlParameter("@CustomerFeeAmt", System.Data.SqlDbType.Float , 8);
+ objParameter[36].Value =  p_objMDOperatorInfo.fltCustomerFeeAmt;
+ 
+ objParameter[37] = new SqlParameter("@IsCreateContract", System.Data.SqlDbType.Float , 8);
+ objParameter[37].Value =  p_objMDOperatorInfo.fltIsCreateContract;
+ 
+ objParameter[38] = new SqlParameter("@CRMPayDate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[38].Value =  p_objMDOperatorInfo.dtmCRMPayDate;
+ 
+ objParameter[39] = new SqlParameter("@DePaySupplierID", System.Data.SqlDbType.VarChar , 255);
+ objParameter[39].Value =  p_objMDOperatorInfo.strDePaySupplierID;
+ 
+ objParameter[40] = new SqlParameter("@F41", System.Data.SqlDbType.VarChar , 255);
+ objParameter[40].Value =  p_objMDOperatorInfo.strF41;
+ 
+ objParameter[41] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[41].Value =  p_objMDOperatorInfo.dtmappdate;
+ 
+	return this.ExecuteSQL(strSQL, objParameter);
+    }
+
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件删除
+/// </summary>
+/// <param name="p_objMDOperatorInfo">
+/// 条件参数为:
+/// </param>
+/// <returns>返回影响行数</returns>
+public int  Deletet_090218Info(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="delete     from t_090218 where appdate=@appdate";
+SqlParameter[] objParmas = new SqlParameter[1];
+ objParmas[0] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParmas[0].Value = p_objMDOperatorInfo.dtmappdate;
+ 
+	return this.ExecuteSQL(strSQL, objParmas);
+}
+
+}
+}

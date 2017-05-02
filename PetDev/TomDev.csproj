@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B8463311-9892-41C8-BB88-C1CA95E122FD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>App.ico</ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>TomDev</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>PetDev</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <SignManifests>true</SignManifests>
+    <SignAssembly>true</SignAssembly>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Microsoft.Office.Core, Version=2.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Interop.Microsoft.Office.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Data.OracleClient" />
+    <Reference Include="System.Design">
+      <Name>System.Design</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Drawing.Design">
+      <Name>System.Drawing.Design</Name>
+    </Reference>
+    <Reference Include="System.Net.Json, Version=1.0.2821.20109, Culture=neutral, PublicKeyToken=e0b9c68a59fc9efd, processorArchitecture=MSIL" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+    <ProjectReference Include="..\Office Menu Control\Office Menu Control.csproj">
+      <Name>Office Menu Control</Name>
+      <Project>{44C3D621-44D1-4B44-95C4-F0B1043633C4}</Project>
+      <Package>{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</Package>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="bin\Interop.Microsoft.Office.Core.dll" />
+    <Content Include="bin\Microsoft.Office.Interop.Excel.dll" />
+    <Content Include="bin\System.Net.Json.dll" />
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Class1.cs" />
+    <Compile Include="Comm\CommonAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="WFOther\WFSysSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFOther\WFSysSet.Designer.cs">
+      <DependentUpon>WFSysSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFSQL\BLLExcel.cs" />
+    <Compile Include="WFSQL\WFSPSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFSQL\WFSPSet.Designer.cs">
+      <DependentUpon>WFSPSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLDBSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLDBSet.designer.cs">
+      <DependentUpon>WFSQLDBSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLMor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLMor.Designer.cs">
+      <DependentUpon>WFSQLMor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLSig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFSQL\WFSQLSig.Designer.cs">
+      <DependentUpon>WFSQLSig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Index.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WebHttp\Class1.cs" />
+    <Compile Include="WebHttp\JobInfoEntity.cs" />
+    <Compile Include="WebHttp\JobsEntity.cs" />
+    <Compile Include="WebHttp\TOExcel.cs" />
+    <Compile Include="WFOracle\WFOracleDBSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleDBSet.Designer.cs">
+      <DependentUpon>WFOracleDBSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFControl\UCTreeView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleMor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleMor.Designer.cs">
+      <DependentUpon>WFOracleMor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleSig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleSig.Designer.cs">
+      <DependentUpon>WFOracleSig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WFOracle\WFOracleSP.Designer.cs">
+      <DependentUpon>WFOracleSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WFVCMor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <EmbeddedResource Include="WFOther\WFSysSet.resx">
+      <DependentUpon>WFSysSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFSQL\WFSPSet.resx">
+      <DependentUpon>WFSPSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFSQL\WFSQLDBSet.resx">
+      <DependentUpon>WFSQLDBSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFSQL\WFSQLMor.resx">
+      <DependentUpon>WFSQLMor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFSQL\WFSQLSig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFSQLSig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Index.resx">
+      <DependentUpon>Index.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFOracle\WFOracleDBSet.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFOracleDBSet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFOracle\WFOracleMor.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFOracleMor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFOracle\WFOracleSP.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFOracleSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFControl\UCTreeView.resx">
+      <DependentUpon>UCTreeView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFOracle\WFOracleSig.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>WFOracleSig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WFVCMor.resx">
+      <DependentUpon>WFVCMor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

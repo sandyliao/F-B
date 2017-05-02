@@ -1,0 +1,54 @@
+/// <summary>
+/// 生成Hastable
+/// </summary>
+public CardBoss.Modules.User.MDUserInfo GetUserInfoInfo()
+{
+CardBoss.Modules.User.MDUserInfo objMDUserInfo = new CardBoss.Modules.User.MDUserInfo();
+string strEmail = "" ;
+string strName = "" ;
+string strSex = "" ;
+string strAlias = "" ;
+string strPhone = "" ;
+string strMobile = "" ;
+string strIDCard = "" ;
+string strArea = "" ;
+string strAddress = "" ;
+string strZipCode = "" ;
+strEmail = txtEmail.Text.Trim();
+strName = txtName.Text.Trim();
+strSex = txtSex.Text.Trim();
+strAlias = txtAlias.Text.Trim();
+strPhone = txtPhone.Text.Trim();
+strMobile = txtMobile.Text.Trim();
+strIDCard = txtIDCard.Text.Trim();
+strArea = txtArea.Text.Trim();
+strAddress = txtAddress.Text.Trim();
+strZipCode = txtZipCode.Text.Trim();
+ objMDUserInfo.strEmail=strEmail;
+ objMDUserInfo.strName=strName;
+ objMDUserInfo.strSex=strSex;
+ objMDUserInfo.strAlias=strAlias;
+ objMDUserInfo.strPhone=strPhone;
+ objMDUserInfo.strMobile=strMobile;
+ objMDUserInfo.strIDCard=strIDCard;
+ objMDUserInfo.strArea=strArea;
+ objMDUserInfo.strAddress=strAddress;
+ objMDUserInfo.strZipCode=strZipCode;
+
+}
+/// <summary>
+/// 生成Hastable
+/// </summary>
+public  void  SetUserInfoInfo(DataTabele p_MDUserInfo )
+{
+txtEmail.Text= dtbUserInfo.Rows[0].["Email"].ToString();
+txtName.Text= dtbUserInfo.Rows[0].["Name"].ToString();
+txtSex.Text= dtbUserInfo.Rows[0].["Sex"].ToString();
+txtAlias.Text= dtbUserInfo.Rows[0].["Alias"].ToString();
+txtPhone.Text= dtbUserInfo.Rows[0].["Phone"].ToString();
+txtMobile.Text= dtbUserInfo.Rows[0].["Mobile"].ToString();
+txtIDCard.Text= dtbUserInfo.Rows[0].["IDCard"].ToString();
+txtArea.Text= dtbUserInfo.Rows[0].["Area"].ToString();
+txtAddress.Text= dtbUserInfo.Rows[0].["Address"].ToString();
+txtZipCode.Text= dtbUserInfo.Rows[0].["ZipCode"].ToString();
+}

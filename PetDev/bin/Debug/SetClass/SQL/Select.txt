@@ -1,0 +1,54 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2014-08-27
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDWithdrawalInfoProviders">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetWithdrawalInfoProvidersInfo(Model.MDWithdrawalInfoProviders p_objMDWithdrawalInfoProviders)
+{
+	string strSQL ="";
+	strSQL ="select Id,RegisterId,BussID,WithdrawalNo,RankName,CardNo,WithdrawalMoney,Remark,ApplyDate,Audit,Flag,AgoAccount,AfterAccount,BtnBackPay,BtnConfirm,BtnPay,BtnFinish,ALLBankName,BtnCancel  from WithdrawalInfoProviders where Id=@Id";
+SqlParameter[] objParameter = new SqlParameter[1];
+
+ objParameter[0] = new SqlParameter("@Id", System.Data.SqlDbType.Int , 4);
+ objParameter[0].Value =  p_objMDWithdrawalInfoProviders.intId;
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2014-08-27
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDWithdrawalInfoProviders">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable GetWithdrawalInfoProvidersList(Model.MDWithdrawalInfoProviders p_objMDWithdrawalInfoProviders,int p_intStart, int p_intPageSize, ref int Out_Count,string p_strOrderBy)
+{
+	SqlParameter[] objParameter = new SqlParameter[0];
+	string strWhere = "";
+	SqlParameter SPNewParm = null;
+	ArrayList listParam = new ArrayList();
+	string strSQL ="";
+	strSQL ="select Id,RegisterId,BussID,WithdrawalNo,RankName,CardNo,WithdrawalMoney,Remark,ApplyDate,Audit,Flag,AgoAccount,AfterAccount,BtnBackPay,BtnConfirm,BtnPay,BtnFinish,ALLBankName,BtnCancel  from WithdrawalInfoProviders where ";
+
+ if ( p_objMDWithdrawalInfoProviders.intId!= int.MinValue  )
+ {
+ SPNewParm = new SqlParameter("@Id", System.Data.SqlDbType.Int , 4);
+ SPNewParm.Value =  p_objMDWithdrawalInfoProviders.intId;
+     listParam.Add(SPNewParm);
+     strWhere += " and Id =@Id  ";
+ }
+
+objParameter = (SqlParameter[])listParam.ToArray(typeof(SqlParameter));
+if (p_strOrderBy.Trim() != "")
+{
+    p_strOrderBy = " order by " + p_strOrderBy;
+}
+strSQL = strSQL + strWhere + p_strOrderBy;
+	return this.ExecuteReadTable(strSQL, objParameter,p_intStart,p_intPageSize,ref Out_Count);
+}

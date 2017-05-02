@@ -1,0 +1,54 @@
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable Gett_090218Info(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo)
+{
+	string strSQL ="";
+	strSQL ="select ContractNo,appdate,ID,SupplierName,PayDate,CustomerID,Type,IsAdjData,PPID,CustomerCode,CustomerID_CRM,Supplier_CRM,Type_CRM,Product,Memo,EHSaleID,EHSaleID_CRM,OrderID_CRM,Employees,Amt,Status,VerifyStatus,UpdateDate,Applier,ApplierDate,Approver,PayApplierDate,SyncDate,SyncMemo,PaymentID,EHSaleID1_CRM,EHSaleID1,IsSecondPay,ContractID,PaidAmt,PrepareAmt,CustomerFeeAmt,IsCreateContract,CRMPayDate,DePaySupplierID,F41  from t_090218 where appdate=@appdate";
+SqlParameter[] objParameter = new SqlParameter[1];
+
+ objParameter[0] = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ objParameter[0].Value =  p_objMDOperatorInfo.dtmappdate;
+
+	return this.ExecuteReadTable(strSQL, objParameter);
+}
+/// <summary>
+/// 作者:     小草
+/// 创建时间: 2010-10-09
+/// 功能描述: 根据条件获取查询数据
+/// </summary>
+/// <param name=" p_objMDOperatorInfo">
+/// 查询条件HashTable的Key为:
+/// </param>
+/// <returns>返回查询结果结合</returns>
+public DataTable Gett_090218List(ToolTest.Modules.MDOperatorInfo p_objMDOperatorInfo,int p_intStart, int p_intPageSize, ref int Out_Count,string p_strOrderBy)
+{
+	SqlParameter[] objParameter = new SqlParameter[0];
+	string strWhere = "";
+	SqlParameter SPNewParm = null;
+	ArrayList listParam = new ArrayList();
+	string strSQL ="";
+	strSQL ="select ContractNo,appdate,ID,SupplierName,PayDate,CustomerID,Type,IsAdjData,PPID,CustomerCode,CustomerID_CRM,Supplier_CRM,Type_CRM,Product,Memo,EHSaleID,EHSaleID_CRM,OrderID_CRM,Employees,Amt,Status,VerifyStatus,UpdateDate,Applier,ApplierDate,Approver,PayApplierDate,SyncDate,SyncMemo,PaymentID,EHSaleID1_CRM,EHSaleID1,IsSecondPay,ContractID,PaidAmt,PrepareAmt,CustomerFeeAmt,IsCreateContract,CRMPayDate,DePaySupplierID,F41  from t_090218 where ";
+
+ if ( p_objMDOperatorInfo.dtmappdate!= "" && p_objMDOperatorInfo.dtmappdate!= null)
+ {
+ SPNewParm = new SqlParameter("@appdate", System.Data.SqlDbType.VarChar , 4);
+ SPNewParm.Value =  p_objMDOperatorInfo.dtmappdate;
+     listParam.Add(SPNewParm);
+     strWhere += " and appdate =@appdate  ";
+ }
+
+objParameter = (SqlParameter[])listParam.ToArray(typeof(SqlParameter));
+if (p_strOrderBy.Trim() != "")
+{
+    p_strOrderBy = " order by " + p_strOrderBy;
+}
+strSQL = strSQL + strWhere + p_strOrderBy;
+	return this.ExecuteReadTable(strSQL, objParameter,p_intStart,p_intPageSize,ref Out_Count);
+}
