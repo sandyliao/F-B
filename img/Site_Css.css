@@ -1,0 +1,162 @@
+﻿BODY {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "细明体", "sans-serif"
+}
+TD {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "细明体", "sans-serif"
+}
+.button {
+	BORDER-RIGHT: #665b8e 1px solid; PADDING-RIGHT: 1px; BORDER-TOP: #ffffff 1px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; BACKGROUND: #cccccc; PADDING-BOTTOM: 1px; BORDER-LEFT: #ffffff 1px solid; CURSOR: hand; COLOR: #333333; PADDING-TOP: 1px; BORDER-BOTTOM: #665b8e 1px solid; FONT-FAMILY: "宋体"; HEIGHT: 20px
+}
+.button_bak {
+	BORDER-RIGHT: medium none; BORDER-TOP: medium none; FONT-SIZE: 9pt; BACKGROUND-IMAGE: url(/manager/images/button_On.gif); BORDER-LEFT: medium none; WIDTH: 60px; CURSOR: hand; BORDER-BOTTOM: medium none; FONT-FAMILY: tahoma,宋体; HEIGHT: 20px
+}
+A:visited {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+A:active {
+	TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+A:link {
+	COLOR: #000000; TEXT-DECORATION: none
+}
+.table_title {
+	FONT-WEIGHT: bold; FONT-SIZE: 12px; COLOR: #000000; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #e5e5e5
+}
+.table_body {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #eeeeee
+}
+.table_none {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #f8f8f8
+}
+.text_input {
+	BORDER-TOP-WIDTH: 1px; BORDER-RIGHT: 1px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 12px; BORDER-BOTTOM-WIDTH: 1px; CURSOR: text; COLOR: #333333; FONT-FAMILY: "Arial"; HEIGHT: 20px
+}
+.Table_yellow {
+	FONT-SIZE: 12px; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #ffff99
+}
+.Table_blue {
+	FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #336699
+}
+.Table_blue1 {
+	FONT-SIZE: 12px; COLOR: #ffffff; FONT-FAMILY: "Verdana", "Arial", "Helvetica", "sans-serif"; BACKGROUND-COLOR: #3366cc
+}
+.no_input {
+	BORDER-RIGHT: #665b8e 0px solid; PADDING-RIGHT: 1px; BORDER-TOP: #665b8e 0px solid; PADDING-LEFT: 1px; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; BORDER-LEFT: #665b8e 0px solid; CURSOR: text; COLOR: #333333; PADDING-TOP: 1px; BORDER-BOTTOM: #665b8e 0px solid; FONT-FAMILY: "Arial"; HEIGHT: 20px
+}
+.down_text {
+	FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial; BACKGROUND-COLOR: #000000
+}
+.down_tools_button {
+	BORDER-RIGHT: #000000 1px solid; PADDING-RIGHT: 2px; BORDER-TOP: #000000 1px solid; FONT-SIZE: 9pt; PADDING-BOTTOM: 0px; BORDER-LEFT: #ffffff 1px solid; WIDTH: 80px; CURSOR: hand; COLOR: #ffffff; LINE-HEIGHT: 7px; PADDING-TOP: 0px; BORDER-BOTTOM: #000000 1px solid; FONT-FAMILY: "Arial"; LETTER-SPACING: 1px; POSITION: relative; HEIGHT: 20px; BACKGROUND-COLOR: #000000; PADDDING-LEFT: 2px
+}
+.menubar_button {
+	BORDER-RIGHT: #ffffff 1pt solid; PADDING-RIGHT: 2px; BORDER-TOP: #ffffff 1pt solid; PADDING-LEFT: 2px; FONT-SIZE: 9pt; PADDING-BOTTOM: 0px; BORDER-LEFT: #ffffff 1pt solid; CURSOR: hand; LINE-HEIGHT: 7px; PADDING-TOP: 0px; BORDER-BOTTOM: #ffffff 1pt solid; FONT-FAMILY: "Arial"; LETTER-SPACING: 1px; POSITION: relative; TOP: -1px; HEIGHT: 20px; BACKGROUND-COLOR: #ffffff; PADDDING-LEFT: 0px
+}
+.menubar_button_on {
+	BORDER-RIGHT: #000000 1pt outset; PADDING-RIGHT: 2px; BORDER-TOP: #000000 1pt outset; PADDING-LEFT: 2px; FONT-SIZE: 9pt; PADDING-BOTTOM: 0px; BORDER-LEFT: #000000 1pt solid; CURSOR: hand; LINE-HEIGHT: 7px; PADDING-TOP: 0px; BORDER-BOTTOM: #000000 1pt outset; FONT-FAMILY: "Arial"; LETTER-SPACING: 1px; POSITION: relative; TOP: -1px; HEIGHT: 20px; BACKGROUND-COLOR: #ffcc00; PADDDING-LEFT: 0px
+}
+.menubar_table {
+	BORDER-TOP-WIDTH: 1px; PADDING-RIGHT: 0px; PADDING-LEFT: 0px; BORDER-LEFT-WIDTH: 1px; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; BORDER-BOTTOM: #000000 3px solid; BORDER-COLLAPSE: collapse; BORDER-RIGHT-WIDTH: 1px
+}
+.menubar_title {
+	FONT-FAMILY: "Arial"
+}
+.menubar_readme_text {
+	FONT-SIZE: 8pt; PADDING-BOTTOM: 5px; COLOR: #808080; FONT-FAMILY: "Arial"; TEXT-ALIGN: right
+}
+.menubar_down_text {
+	BORDER-TOP: #000000 1px solid; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; COLOR: #808080; PADDING-TOP: 3px; FONT-FAMILY: "Arial"; POSITION: relative; TEXT-ALIGN: center; BORDER-RIGHT-WIDTH: 1px
+}
+.menubar_function_text {
+	BORDER-TOP: #000000 3px solid; PADDING-LEFT: 10px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; COLOR: #808080; PADDING-TOP: 3px; FONT-FAMILY: "Arial"; POSITION: relative; BORDER-RIGHT-WIDTH: 1px
+}
+.menubar_menu_td {
+	BORDER-TOP: #000000 3px solid; PADDING-LEFT: 10px; BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; COLOR: #808080; PADDING-TOP: 3px; FONT-FAMILY: "Arial"; POSITION: relative; BORDER-RIGHT-WIDTH: 1px
+}
+.tab {
+	PADDING-RIGHT: 15px; PADDING-LEFT: 10px; FONT-SIZE: 12px; PADDING-BOTTOM: 1px; CURSOR: hand; PADDING-TOP: 5px; LETTER-SPACING: 1px
+}
+.row {
+	PADDING-LEFT: 5px; HEIGHT: 16px; ; BACKGROUND-COLOR: expression(rowIndex%2==1?'#F2F2F2':'#FFFFFF')
+}
+.lt0 {
+	BORDER-RIGHT: #f1f1f1 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #f1f1f1 1px solid; PADDING-LEFT: 6px; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 0px; BORDER-LEFT: #f1f1f1 1px solid; CURSOR: hand; PADDING-TOP: 0px; BORDER-BOTTOM: #f1f1f1 1px solid
+}
+.lt00 {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 6px; BACKGROUND: #f1f1f1; PADDING-BOTTOM: 0px; BORDER-LEFT: #999 1px solid; CURSOR: hand; PADDING-TOP: 0px; BORDER-BOTTOM: #999 1px solid
+}
+.lt1 {
+	BORDER-RIGHT: #999 1px solid; PADDING-RIGHT: 6px; BORDER-TOP: #999 1px solid; PADDING-LEFT: 6px; BACKGROUND: #ccc; PADDING-BOTTOM: 0px; BORDER-LEFT: #999 1px solid; CURSOR: hand; PADDING-TOP: 0px; BORDER-BOTTOM: #999 1px solid
+}
+.daohang {
+	FONT-SIZE: 9pt; COLOR: #818181; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.daohang1:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #3366cc; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.daohang1:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #cc3300; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.daohang1:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000066; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.text-w {
+	FONT-SIZE: 9pt; COLOR: #ffffff; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.title-u {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #003399; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.bluel9 {
+	FONT-SIZE: 9pt; COLOR: #3366cc; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.grey9 {
+	FONT-SIZE: 9pt; COLOR: #666666; LINE-HEIGHT: 13pt; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.text-b {
+	FONT-SIZE: 9pt; COLOR: #000000; LINE-HEIGHT: 14pt; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.blue9-1 {
+	FONT-SIZE: 9pt; COLOR: #003366; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.blue11 {
+	FONT-SIZE: 11pt; COLOR: #003366; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.blue9:link {
+	FONT-SIZE: 9pt; COLOR: #003399; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.blue9:hover {
+	FONT-SIZE: 9pt; COLOR: #0066cc; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.blue9:visited {
+	FONT-SIZE: 9pt; COLOR: #003399; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.bluel9:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #006699; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.bluel9:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.bluel9:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; COLOR: #006699; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.text-bg:link {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.text-bg:hover {
+	FONT-SIZE: 9pt; COLOR: #666666; FONT-FAMILY: "宋体"; TEXT-DECORATION: underline
+}
+.text-bg:visited {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: "宋体"; TEXT-DECORATION: none
+}
+.button {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: 宋体; BACKGROUND-COLOR: #eeeeee
+}
+.TD_title {
+	PADDING-RIGHT: 14px; PADDING-LEFT: 14px; PADDING-BOTTOM: 2px; PADDING-TOP: 2px
+}
+.text_down_text {
+	BORDER-LEFT-WIDTH: 1px; FONT-SIZE: 8pt; BORDER-BOTTOM-WIDTH: 1px; COLOR: #808080; PADDING-TOP: 3px; FONT-FAMILY: "Arial"; POSITION: relative; BORDER-RIGHT-WIDTH: 1px
+}

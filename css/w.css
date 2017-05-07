@@ -1,0 +1,98 @@
+html,body,ul,li,div,p,dl,dt,dd{padding:0;margin:0;font-family:"ËÎÌå";font-size:14px;}
+ul,li{list-style:none}
+img{border:0;}
+body{background:url(../images/bodyBg.png) repeat-x left top;}
+a:link{color:#000000;text-decoration:none}
+a:visited{color:#000000;text-decoration:none}
+a:hover{color:#ff0000;text-decoration:underline}
+.white a:link{color:#ffffff;text-decoration:none}
+.white a:visited{color:#ffffff;text-decoration:none}
+.white a:hover{color:#ffffff;text-decoration:underline}
+
+.lay_canp{display:inline-block;width:950px;margin-top:auto; }
+.z_border{border:2px solid #DBDBDB;margin-top: 10px;}
+.z_title{background: #F7F7F7 none repeat scroll 0% 0%;border-bottom: 2px solid #0664A4;width: 950px;height: 35px;text-align: left;vertical-align: middle;font-size: 16px;color:#0664A4;line-height: 35px;padding-left:0px ;}
+.z_border ul{}
+.z_border li{float: left;margin: 0px;}
+.z_border img{width: 210px; height: 52px; border: 1px solid #dbdbdb;margin: 5px 9px;}
+
+
+
+.grayblue a:link{color:#0061A1;text-decoration:none}
+.grayblue a:visited{color:#0061A1;text-decoration:none}
+.grayblue a:hover{color:#ff0000;text-decoration:underline}
+
+.top{height:102px;background:url(../images/topBg.png) repeat-x left top;}
+.topIndex{width:980px;margin:auto;}
+.logo{float:left;width:109px;height:68px;margin-top:15px;}
+.topIndexr{width:750px;float:right}
+.tel{height:17px;text-align:right;padding-top:20px;}
+.navlist{width:702px;float:right;margin-top:31px;}
+.navlist li{float:left;position:relative;width:78px;}
+.navlist li a{display:block;width:78px;height:34px;line-height:34px;background:url(../images/tabLink.png) no-repeat left center;color:#0061A1;text-align:center}
+.navlist li a:hover{background:url(../images/tabHover.png) no-repeat left center;color:#0061A1;text-decoration:none;color:#FFFFFF}
+.navlist .hover:hover,.navlist .hover{background:url(../images/tabActive.png) no-repeat left center;color:#FFFFFF}
+.navlist .hover:visited{color:#FFFFFF}
+.gywm{position:absolute;top:34px;left:0;width:72px;background:#005E9D;padding:10px 2px;border:1px solid #ACCECF;border-top:none;display:none}
+.gywm p{height:25px;line-height:25px;}
+.gywm p a{background:none;height:25px;line-height:25px;width:72px;color:#eaeaea}
+.gywm p a:hover{background:url(../images/tabHovera.png) repeat-x left top;color:#FFFFFF}
+.flash{width:980px;height:197px;margin:15px auto;}
+.content{background:#ffffff url(../images/contBot.png) repeat-x left bottom;width:950px;margin:auto;padding:15px 15px;min-height:450px;height:auto!important;height:450px;}
+.contentL{width:315px;float:left;}
+.lista{}
+.lista li{height:30px;vertical-align:middle;background:url(../images/dash.png) repeat-x bottom center;line-height:30px;}
+.lista li .span1{background:url(../images/sjx_y.gif) no-repeat left center;padding-left:10px;}
+.lista li .span2{float:right;color:#666666}
+.news{height:210px;}
+.aboutUsa .tit,.news .tit{height:30px;line-height:30px;position:relative}
+.news .tit .span1{float:right;width:39px;height:14px;margin-top:7px;}
+.aboutUsa .tit .span2,.news .tit .span2{float:left;position:absolute;background:url(../images/titBg.png) no-repeat left center;width:117px;height:37px;line-height:23px;text-align:center;left:-27px;top:0;font-family:"Î¢ÈíÑÅºÚ";font-size:14px;color:#FFFFFF}
+.clear{clear:both;overflow:hidden;font-size:1px;height:1px;line-height:1px}
+
+.blank25{height:20px;line-height:20px;clear:both;}
+.tzln{}
+.tzln .tit{height:60px;}
+.tzln .text{}
+.tzln .text p{line-height:22px;background:url(../images/nxbg.gif) no-repeat left 5px;padding-left:15px;margin-top:15px;}
+.aboutUs{border:1px solid #E8E8E8;height:208px;}
+.contentR{float:right;width:618px;}
+.aboutUs .tit{height:30px;margin:0 10px;border-bottom:1px solid #e8e8e8;}
+.aboutUs .span1{float:left;font-family:"Î¢ÈíÑÅºÚ";font-weight:bold;font-size:14px;color:#0664A4;width:120px;padding-left:35px;height:30px;line-height:30px;}
+.aboutUs .span2{float:right;width:39px;height:14px;margin-top:7px;}
+.aboutUs .text{padding:10px;}
+.aboutUs .text p{line-height:22px;margin-bottom:8px;text-indent:2em;}
+.qxcp{width:300px;float:left;}
+.hxtd{width:300px;float:right;}
+
+.bottom{width:980px;margin:10px auto;height:180px; border-top: 2px solid #0664A4;clear:both;}
+.contentb{width:980px;margin:auto;min-height:500px;height:auto!important;height:500px;background:#ffffff url(../images/contentbL.png) repeat-y left left;height:100%;}
+.contentbL{width:174px;float:left;padding:15px;}
+.aboutUs_list{}
+.aboutUs_list li{height:30px;line-height:30px;background:url(../images/sjx_y.gif) no-repeat 5px center;padding-left:25px;border-bottom:1px solid #ddd;}
+.aboutUs_list .hover{background:url(../images/sjx_z.gif) no-repeat 5px center;font-weight:bold}
+.aboutUs_list .hover a:link{color:#FF6600}
+.aboutUs_list .hover a:visited{color:#FF6600}
+.aboutUs_list .hover a:hover{color:#FF6600}
+
+.aboutUs_list .mail{background:url(../images/email.gif) no-repeat 5px center}
+.aboutUs_list .pho{background:url(../images/telPho.gif) no-repeat 5px center}
+.contentbR{width:775px;float:right;}
+.contentbR_text{padding:20px;}
+.contentbR_text p{line-height:30px;font-size:14px;margin-top:20px;text-indent:2em}
+.contentbR_text .tit{font-family:"Î¢ÈíÑÅºÚ";font-size:17px;height:30px;line-height:30px;border-bottom:1px solid #dddddd;;font-weight:bold}
+.newslist{margin-top:20px;}
+.newslist li{height:35px;vertical-align:middle;background:url(../images/dash.png) repeat-x bottom center;line-height:35px;font-size:14px;}
+.newslist li .span1{background:url(../images/sjx_y.gif) no-repeat left center;padding-left:20px;}
+.newslist li .span2{float:right;color:#666666}
+.navDh{text-align:right}
+.contentbR_text .tit2{text-align:center;line-height:40px;font-size:25px;font-weight:bold}
+.contentbR_text .tit3{height:20px;text-align:center;color:#999999;line-height:20px;}
+
+.contentbR_text dl{padding:30px;}
+.contentbR_text dt{width:105px;
+text-align:right;padding-right:10px;float:left;height:25px;line-height:25px;margin-top:10px;
+}
+.contentbR_text dd{width:500px;float:left;height:25px;margin-top:10px;line-height:25px;}
+.contentbR_text dd input:text{width:200px;}
+.contentbR_text .sumbit input{width:96px;height:33px;background:url(../images/button_b.png) no-repeat left center;border:0;color:#FFFFFF;text-align:center;cursor:pointer;margin-top:20px;}

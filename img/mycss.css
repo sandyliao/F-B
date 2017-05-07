@@ -1,0 +1,37 @@
+td,p,li,input,select{
+	font-size:12px;
+	line-height: 20px;
+}
+a:hover {
+	color: #FF6600;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+}
+a:link {
+	text-decoration: none;
+}
+.x {
+	text-decoration: underline;
+}
+.C02 {
+	font-family: "Geneva", "Arial", "Helvetica", "sans-serif";
+	font-size: 11px;
+}
+.x1 {
+	color: #2B76C1;
+	text-decoration: underline;
+
+}
+.big {
+	font-size: 14px;
+}
+.box {
+	font-family: "Arial", "Helvetica", "sans-serif";
+	font-size: 11px;
+	color: #990000;
+	background-color: #FBF1EC;
+	font-weight: bold;
+
+}
